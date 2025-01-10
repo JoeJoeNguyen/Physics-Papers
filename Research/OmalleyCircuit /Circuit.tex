@@ -428,7 +428,7 @@ Where: $\{X_i, Z_i, Y_i\}$ denote the Pauli matrices acting on the i-th qubit an
 	      \end{align*}
 	      Where \(U_{Bell} = \left( H \otimes I \right) \cdot \text{CNOT}(0,1)\)
 	      \begin{equation*}
-            U_{Bell} = \frac{1}{\sqrt{2}}\begin{bmatrix}
+		      U_{Bell} = \frac{1}{\sqrt{2}}\begin{bmatrix}
 			      1 & 0 & 0  & 1  \\
 			      0 & 1 & 1  & 0  \\
 			      1 & 0 & 0  & -1 \\
@@ -442,7 +442,7 @@ Where: $\{X_i, Z_i, Y_i\}$ denote the Pauli matrices acting on the i-th qubit an
 		      D
 	      \end{bmatrix}\)
 	      \begin{equation*}
-            U_{Bell} \cdot \begin{bmatrix}
+		      U_{Bell} \cdot \begin{bmatrix}
 			      A \\
 			      B \\
 			      C \\
@@ -460,29 +460,35 @@ Where: $\{X_i, Z_i, Y_i\}$ denote the Pauli matrices acting on the i-th qubit an
 		      \centering
 		      \includegraphics[width=0.9\textwidth, height=0.25\textheight]{BellM.png}
 	      \end{figure}
-          The trial wavefunction after applying the \(U_{Bell}\) unitary gate:
-          \begin{equation*}
-            U_{Bell} \cdot |\phi(\vec{\theta})\rangle = U_{Bell} \cdot \begin{bmatrix}
-                0 \\
-                -\sin\left(\frac{\theta}{2}\right) \\
-                \cos\left(\frac{\theta}{2}\right) \\
-                0
-            \end{bmatrix}
-            = \frac{1}{\sqrt{2}}
-            \begin{bmatrix}
-                0 \\
-                \cos\left(\frac{\theta}{2}\right) + \sin\left(\frac{\theta}{2}\right) \\
-                0 \\
-                \cos\left(\frac{\theta}{2}\right) - \sin\left(\frac{\theta}{2}\right) 
-            \end{bmatrix}
-            \begin{array}{c}
-                |00 \rangle\\
-                |01 \rangle\\
-                |10 \rangle\\
-                |11 \rangle
-            \end{array}
-          \end{equation*}
-          Using \(\theta \approx -3.37\) we have:
+	      The trial wavefunction after applying the \(U_{Bell}\) unitary gate:
+	      \begin{equation*}
+		      U_{Bell} \cdot |\phi(\vec{\theta})\rangle = U_{Bell} \cdot \begin{bmatrix}
+			      0                                  \\
+			      -\sin\left(\frac{\theta}{2}\right) \\
+			      \cos\left(\frac{\theta}{2}\right)  \\
+			      0
+		      \end{bmatrix}
+		      = \frac{1}{\sqrt{2}}
+		      \begin{bmatrix}
+			      0                                                                     \\
+			      \cos\left(\frac{\theta}{2}\right) - \sin\left(\frac{\theta}{2}\right) \\
+			      0                                                                     \\
+			      -\cos\left(\frac{\theta}{2}\right) - \sin\left(\frac{\theta}{2}\right)
+		      \end{bmatrix}
+		      \begin{array}{c}
+			      |00 \rangle \\
+			      |01 \rangle \\
+			      |10 \rangle \\
+			      |11 \rangle
+		      \end{array}
+		      \begin{array}{c}
+			      \\
+			      \approx 0.39\% \\
+			      \\
+			      \approx 0.61\%
+		      \end{array}
+	      \end{equation*}
+	      Using \(\theta \approx -3.37\) we have:
 	      \begin{figure}[H]
 		      \centering
 		      \includegraphics[width=0.5\textwidth, height=0.3\textheight]{BellHis.png}
