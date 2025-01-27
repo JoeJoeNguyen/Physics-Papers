@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1736519519.93949 "/Users/joenguyen/Physics-Papers/Research/OmalleyCircuit /Circuit.tex" "Circuit.pdf" "Circuit" 1736519520.71825 0
-  "/Users/joenguyen/Physics-Papers/Research/OmalleyCircuit /Circuit.tex" 1736519519.68921 21599 fe9677f359c3ecb4d683dfdb423a6ed9 ""
+["pdflatex"] 1736523403.93518 "/Users/joenguyen/Physics-Papers/Research/OmalleyCircuit /Circuit.tex" "Circuit.pdf" "Circuit" 1736523404.70831 0
+  "/Users/joenguyen/Physics-Papers/Research/OmalleyCircuit /Circuit.tex" 1736523403.69822 21562 1c249260f5f6fb1ecced087496c4c5a6 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/ectt1000.tfm" 1136768653 1536 06717a2b50de47d4087ac0e6cd759455 ""
@@ -105,9 +105,9 @@
   "BellHis.png" 1736517835.69744 11288 5c71641e56f2484f93a052499133c83c ""
   "BellM.png" 1734724742.17107 18214 1f0322389afde9b9563e12a2392f7ecd ""
   "Circ.png" 1734724742.17119 10222 086561616cee748cc20858369cd69914 ""
-  "Circuit.aux" 1736519520.64326 555 9dafea18b8c740081b215b6261022926 "pdflatex"
-  "Circuit.out" 1736519520.3639 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "Circuit.tex" 1736519519.68921 21599 fe9677f359c3ecb4d683dfdb423a6ed9 ""
+  "Circuit.aux" 1736523404.63529 555 9dafea18b8c740081b215b6261022926 "pdflatex"
+  "Circuit.out" 1736523404.36397 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "Circuit.tex" 1736523403.69822 21562 1c249260f5f6fb1ecced087496c4c5a6 ""
   "ansatz1.png" 1734724742.17286 6118 a0f4118639570ce78a842cc6d0519e16 ""
   "ref.png" 1734724742.17307 2754 47659fbdc1ea8a359bc367034cda8f2b ""
   (generated)
