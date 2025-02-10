@@ -563,6 +563,28 @@ Where:
 	\item count = number of times the bitstring was measured
 	\item shots = total number of measurements
 \end{itemize}
+\subsection{Theoretical Analysis}
+\begin{itemize}
+	\item For the \(XX\) operator
+	\begin{equation*}
+		XX = 
+		\begin{bmatrix}
+			0 & 1 \\
+			1 & 0
+		\end{bmatrix}
+		\otimes
+		\begin{bmatrix}
+			0 & 1 \\
+			1 & 0
+		\end{bmatrix}
+		= \begin{bmatrix}
+			0 & 0 & 0 & 1 \\
+			0 & 0 & 1 & 0 \\
+			0 & 1 & 0 & 0 \\
+			1 & 0 & 0 & 0
+		\end{bmatrix}
+	\end{equation*}
+\end{itemize}
 \section{Bell Measurement (Incomplete)}
 Alternatively, using Bell Measurement to reconstruct the trial wavefunction with the parameter \(\theta \approx -3.37\), getting the expectation after 1000 measurements:
 \begin{figure}[H]
