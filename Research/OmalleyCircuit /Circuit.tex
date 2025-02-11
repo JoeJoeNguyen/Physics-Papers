@@ -584,6 +584,40 @@ Where:
 			1 & 0 & 0 & 0
 		\end{bmatrix}
 	\end{equation*}
+	we have the eigenvalues of \(XX\) are \(\pm 1\), the eigenvectors are:
+	\begin{align*}
+		v_1 &= \begin{bmatrix}
+			0\\
+			1\\
+			1\\
+			0
+		\end{bmatrix}, \lambda_1 = 1 \\
+		v_2 &= \begin{bmatrix}
+			0 \\
+			-1 \\
+			1\\
+			0
+		\end{bmatrix}, \lambda_2 = -1 \\
+		v_3 &= \begin{bmatrix}
+			1\\
+			0\\
+			0\\
+			1
+		\end{bmatrix}, \lambda_3 = 1 \\
+		v_4 &= \begin{bmatrix}
+			-1\\
+			0\\
+			0\\
+			1
+		\end{bmatrix}, \lambda_4 = -1
+	\end{align*} 
+	The expectation value of an observable \(O\) is given by:
+	\begin{equation*}
+		\langle O \rangle = \sum_{i} \lambda_i p_i
+	\end{equation*}
+	Where \(p_i\) is the probability of measuring the state in the \(i^{th}\) eigenstate.\\ \\
+	From above we can see that \(H |0 \rangle = | + \rangle, H|1\rangle = | - \rangle\). The corresponding eigenvalues for the operator \(X\) are 
+	\[\langle + | X |+ \rangle = 1 \text{ and } \langle - | X | - \rangle = 1\]
 \end{itemize}
 \section{Bell Measurement (Incomplete)}
 Alternatively, using Bell Measurement to reconstruct the trial wavefunction with the parameter \(\theta \approx -3.37\), getting the expectation after 1000 measurements:
