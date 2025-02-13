@@ -102,10 +102,10 @@ Where: $\{X_i, Z_i, Y_i\}$ denote the Pauli matrices acting on the i-th qubit an
 \]
 \section{Decomposing the UCCSD ansatz}
 \begin{figure}[h]
+	\label{fig:Figure 1}
 	\centering
 	\includegraphics[width=0.8\textwidth, height=0.2\textheight]{Circ.png}
 	\caption{The UCCSD ansatz for the Hydrogen molecule.}
-	\label{fig:yourlabel}
 \end{figure}
 
 Reference state \(|10 \rangle\)
@@ -567,7 +567,7 @@ Where:
 	\item count = number of times the bitstring was measured
 	\item shots = total number of measurements
 \end{itemize}
-\subsection{Theoretical Analysis}
+\subsection{Theoretical Analysis \((XX)\)}
 \begin{itemize}
 	\item For the \(XX\) operator
 	      \begin{equation*}
@@ -644,7 +644,10 @@ Where:
 				\hline
 			\end{tabular}
 		  \end{table}
+
 \end{itemize}
+\subsection{Experimental Analysis \((XX)\)}
+	From our circuit that produce the wavefunction \(|\phi(\vec{\theta})\rangle\) (see Figure \ref{fig:Figure 1}). We just need to apply two Hadamard gates to the qubits and measure the expectation value of the \(XX\) operator.
 \section{Bell Measurement (Incomplete)}
 Alternatively, using Bell Measurement to reconstruct the trial wavefunction with the parameter \(\theta \approx -3.37\), getting the expectation after 1000 measurements:
 \begin{figure}[H]
