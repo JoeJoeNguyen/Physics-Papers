@@ -567,7 +567,7 @@ Where:
 	\item count = number of times the bitstring was measured
 	\item shots = total number of measurements
 \end{itemize}
-\subsection{Theoretical Analysis \((XX)\)}
+\subsection{Theoretical Analysis (XX)}
 \begin{itemize}
 	\item For the \(XX\) operator
 	      \begin{equation*}
@@ -603,8 +603,8 @@ Where:
 			      \frac{1}{2} \\
 			      \frac{1}{2}
 		      \end{bmatrix} = |++\rangle = \frac{1}{2}(|00\rangle + |01\rangle + |10\rangle + |11\rangle)\]
-	      \[(H \otimes H)|01\rangle =|+-\rangle\]
-	      \[(H \otimes H)|10\rangle =|-+\rangle\]
+	      \[(H \otimes H)|01\rangle =|+-\rangle = \frac{1}{\sqrt{2}} (|00\rangle + |10\rangle)\]
+	      \[(H \otimes H)|10\rangle =|-+\rangle = \frac{1}{\sqrt{2}} (|00\rangle - |10\rangle)\]
 	      \[(H \otimes H)|11\rangle =|--\rangle\]
 	      Apply the operator \(XX\) on each state:
 	      \begin{align*}
@@ -646,8 +646,29 @@ Where:
 		  \end{table}
 
 \end{itemize}
-\subsection{Experimental Analysis \((XX)\)}
+\subsection{Experimental Analysis (XX)}
 	From our circuit that produce the wavefunction \(|\phi(\vec{\theta})\rangle\) (see Figure \ref{fig:Figure 1}). We just need to apply two Hadamard gates to the qubits and measure the expectation value of the \(XX\) operator.
+	\begin{figure}[H]
+		\label{fig:Figure XX}
+		\centering
+		\includegraphics[width=0.7\textwidth, height=0.2\textheight]{XX.png}
+		\caption{Circuit for the \(XX\) operator}
+	\end{figure}
+	Give the trial wavefunction \(|\phi(\vec{\theta})\rangle = \cos\left(\frac{\theta}{2}\right)|01\rangle - \sin\left(\frac{\theta}{2}\right)|10\rangle\). Applying the Hadamard gates given:
+	\begin{align*}
+		(H \otimes H)|\phi(\vec{\theta})\rangle  &= (H \otimes H)(\cos\left(\frac{\theta}{2}\right)|01\rangle - \sin\left(\frac{\theta}{2}\right)|10\rangle) \\
+		                                         &= \cos\left(\frac{\theta}{2}\right)(H \otimes H)|01\rangle - \sin\left(\frac{\theta}{2}\right)(H \otimes H)|10\rangle \\
+		                                         &= \cos\left(\frac{\theta}{2}\right)|+-\rangle - \sin\left(\frac{\theta}{2}\right)|-+\rangle
+	\end{align*}
+	Then we apply the \(\text{CNOT}_{01}\) gate to the state:
+	\begin{align*}
+		&\text{CNOT}_{01}(\cos\left(\frac{\theta}{2}\right)|+-\rangle - \sin\left(\frac{\theta}{2}\right)|-+\rangle) =\\ 
+		&= \text{CNOT}_{01} \cos\left(\frac{\theta}{2}\right)\frac{1}{\sqrt{2}}\left(|00\rangle + |10\rangle\right) - \text{CNOT}_{01}\sin\left(\frac{\theta}{2}\right)\frac{1}{\sqrt{2}}\left(|00\rangle - |10\rangle\right) \\
+		&= \frac{1}{\sqrt{2}} \left[\text{CNOT}_{01}\left(\cos\left(\frac{\theta}{2}\right)-\sin\left(\frac{\theta}{2}\right)\right)|00\rangle+\text{CNOT}_{01}\left(\cos\left(\frac{\theta}{2}\right)+\sin\left(\frac{\theta}{2}\right)\right)|10\rangle\right]\\
+		&= \frac{1}{\sqrt{2}} \left[\left(\cos\left(\frac{\theta}{2}\right)-\sin\left(\frac{\theta}{2}\right)\right)|00\rangle+\left(\cos\left(\frac{\theta}{2}\right)+\sin\left(\frac{\theta}{2}\right)\right)|11\rangle\right]
+	\end{align*}
+
+
 \section{Bell Measurement (Incomplete)}
 Alternatively, using Bell Measurement to reconstruct the trial wavefunction with the parameter \(\theta \approx -3.37\), getting the expectation after 1000 measurements:
 \begin{figure}[H]
