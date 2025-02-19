@@ -1,0 +1,102 @@
+%This is my super simple Real Analysis Homework template
+
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[]{amsthm} %lets us use \begin{proof}
+\usepackage[]{amssymb} %gives us the character \varnothing
+\usepackage[]{setspace} %provides commands to set line spacing
+\usepackage[left=0.75in, right=0.75in]{geometry}
+\usepackage{hyperref}
+\usepackage{xcolor}
+%\author{Son Nguyen}
+%\date{\today}
+
+\begin{document}
+%\maketitle %This command prints the title based on information entered above
+\begin{center}
+    \LARGE{VQE - note}\\[1em]
+    \large Son Nguyen\\[1em]
+    %\large \today
+\end{center}
+
+\onehalfspacing
+\subsection*{Basis Sets}
+\begin{itemize}
+    \item A basis set is a set of functions combined linearly to model molecular orbitals. Basis functions can be considered as representing the atomic orbitals of the atoms and are introduced in quantum chemical calculations because the equations defining the molecular 
+    orbitals are otherwise very difficult to solve.
+
+
+\subsubsection*{Slater-Type Orbitals (STO's)}
+
+\begin{itemize}
+    \item These are functions used as atomic orbitals in the linear combination of atomic orbitals molecular 
+    orbital method.
+    \item STOs have the following radial part:
+    \begin{equation}
+        R(r) = N r^{n-1} e^{-\zeta r}
+    \end{equation}
+    \item Where:
+    \begin{itemize}
+        \item \textit{n} is a natural number that corresponds to the principal quantum number (\(n = 1, 2, \dots \)).
+        \item \textit{N} is a normalization constant.
+        \item \textit{r} is the distance of the electron from the atomic nucleus. 
+        \item \(\zeta\) is a constant related to the effective nuclear charge, which is partly shielded by electrons. The effective nuclear charge can be estimated by Slater's rules.
+    \end{itemize}
+\end{itemize}
+\href{https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Physical_Chemistry_(LibreTexts)/11%3A_Computational_Quantum_Chemistry/11.02%3A_Gaussian_Basis_Sets}{\colorbox{yellow}{LibreTexts}}
+
+\href{https://www.basissetexchange.org/}{\colorbox{yellow}{Basis Set Exchange}}
+
+
+\subsubsection*{Gaussian-type Orbitals (GTOs)}
+\begin{itemize}
+    \item STOs are computationally difficult and it was later realized that these Slater-type orbitals could in turn be approximated 
+    as linear combination of Gaussian orbitals instead.
+    
+    \begin{equation}
+        G(r) = N \cdot e^{-\alpha r^2}
+    \end{equation}
+
+    \item where:
+    \begin{itemize}
+        \item N is a normalization constant.
+        \item \(\alpha\) controls the width of the Gaussian.
+        \item \(r \) is the distance between the electron and nucleus.
+    \end{itemize}
+\end{itemize}
+
+\subsubsection*{STO-3G basis set}
+    \begin{itemize}
+        \item STO-nG basis sets are minimal basis sets. where n primitve Gaussian orbitals (GTOs) are fitted to a single Slater-type orbital (STO).
+        n originally took the value of 2 - 6. A minimum basis set is where only sufficient orbitals are used to contain all the electrons
+        in the neutral atom. The core and valence orbitals are represented by the same number 
+        of primitve Gaussian function \(\phi_i\)
+        \begin{equation}
+            \phi STO \approx \sum_{i=1}^{3} c_iG_i(r)
+        \end{equation}
+        \item where:
+        \begin{itemize}
+            \item \(G_i(r)\) are the Gaussian functions centered at the atom, with exponents \(\alpha_i\) controlling the spread of the Gaussian
+            \item \(c_i\) are the coefficients that weight each Gaussian function
+            \item \(r\) is the distance from the nucleus
+        \end{itemize}
+    \end{itemize}
+
+
+\end{itemize}
+\subsection*{Molecular orbital}
+    \begin{itemize}
+        \item {Using the linear combination of atomic orbitals (LCAO method) to construct
+        the molecular orbitals}
+        \begin{equation}
+            \Psi(r) = \sum_{i}^{} c_{i}\phi_i(r)
+        \end{equation}
+        \item where:
+        \begin{itemize}
+            \item \(\phi_i(r)\) are the atomic orbitals represented by basis functions (in this case STO-3G).
+            \item \(c_i\) are coefficients obtained through HF method (still need to look into more)
+        \end{itemize}
+    \end{itemize}
+    
+\end{document}
