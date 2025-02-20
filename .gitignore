@@ -13,4 +13,4 @@ CS334/.DS_Store
 !**/*.tex
 
 # Ensure the .gitignore file itself is not ignored
-!.gitignores
+!.gitignore
