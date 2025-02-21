@@ -11,6 +11,7 @@ CS334/.DS_Store
 # Allow PDF files in any directory
 !**/*.pdf
 !**/*.tex
+!**/*.png
 
 # Ensure the .gitignore file itself is not ignored
 !.gitignore
