@@ -588,7 +588,7 @@ Where:
 			      1 & 0 & 0 & 0
 		      \end{bmatrix}
 	      \end{equation*}
-	
+
 	      The expectation value of an observable \(O\) is given by:
 	      \begin{equation*}
 		      \langle O \rangle = \sum_{i} \lambda_i p_i
@@ -603,70 +603,70 @@ Where:
 			      \frac{1}{2} \\
 			      \frac{1}{2}
 		      \end{bmatrix} = |++\rangle = \frac{1}{2}(|00\rangle + |01\rangle + |10\rangle + |11\rangle)\]
-	      \[(H \otimes H)|01\rangle =|+-\rangle = \frac{1}{\sqrt{2}} (|00\rangle + |10\rangle)\]
-	      \[(H \otimes H)|10\rangle =|-+\rangle = \frac{1}{\sqrt{2}} (|00\rangle - |10\rangle)\]
+	      \[(H \otimes H)|01\rangle =|+-\rangle = \frac{1}{2}(|00\rangle - |01\rangle +|10\rangle -|11\rangle)\]
+	      \[(H \otimes H)|10\rangle =|-+\rangle = \frac{1}{2} (|00\rangle + |01\rangle - |10\rangle - |11\rangle)\]
 	      \[(H \otimes H)|11\rangle =|--\rangle\]
 	      Apply the operator \(XX\) on each state:
 	      \begin{align*}
-		      XX|++\rangle & = \frac{1}{2}(XX|00\rangle + XX|01\rangle + XX|10\rangle + XX|11\rangle)      \\
-		                   & = \frac{1}{2}(|11\rangle + |10\rangle + |01\rangle + |00\rangle) = |++\rangle \\
-		                   & \Rightarrow \langle++ |XX|++ \rangle = \langle++ |++ \rangle =1 \\
-			  XX|+-\rangle & = \frac{1}{2}(XX|00\rangle - XX|01\rangle + XX|10\rangle - XX|11\rangle)      \\
-			  &= \frac{1}{2}(|11\rangle - |10\rangle + |01\rangle - |00\rangle) = \frac{1}{2} \begin{bmatrix}
-				-1 \\
-				1  \\
-				-1 \\
-				1
-			  \end{bmatrix}\\
-			  & \Rightarrow \langle+- |XX|+- \rangle = \begin{bmatrix}
-				\frac{1}{2} & \frac{-1}{2} & \frac{1}{2} & \frac{-1}{2} 
-			  \end{bmatrix}\cdot \begin{bmatrix}
-				\frac{-1}{2} \\
-				\frac{1}{2}  \\
-				\frac{-1}{2} \\
-				\frac{1}{2}
-			  \end{bmatrix} = -1
+		      XX|++\rangle & = \frac{1}{2}(XX|00\rangle + XX|01\rangle + XX|10\rangle + XX|11\rangle)                       \\
+		                   & = \frac{1}{2}(|11\rangle + |10\rangle + |01\rangle + |00\rangle) = |++\rangle                  \\
+		                   & \Rightarrow \langle++ |XX|++ \rangle = \langle++ |++ \rangle =1                                \\
+		      XX|+-\rangle & = \frac{1}{2}(XX|00\rangle - XX|01\rangle + XX|10\rangle - XX|11\rangle)                       \\
+		                   & = \frac{1}{2}(|11\rangle - |10\rangle + |01\rangle - |00\rangle) = \frac{1}{2} \begin{bmatrix}
+			                                                                                                    -1 \\
+			                                                                                                    1  \\
+			                                                                                                    -1 \\
+			                                                                                                    1
+		                                                                                                    \end{bmatrix}  \\
+		                   & \Rightarrow \langle+- |XX|+- \rangle = \begin{bmatrix}
+			                                                            \frac{1}{2} & \frac{-1}{2} & \frac{1}{2} & \frac{-1}{2}
+		                                                            \end{bmatrix}\cdot \begin{bmatrix}
+			                                                                               \frac{-1}{2} \\
+			                                                                               \frac{1}{2}  \\
+			                                                                               \frac{-1}{2} \\
+			                                                                               \frac{1}{2}
+		                                                                               \end{bmatrix} = -1
 	      \end{align*}
-		  and so we can get the remaining expectation values \(\langle -+ |XX| -+\rangle = -1, \langle -- |XX|--\rangle = 1\)
-		  \begin{table}[H]
-			\centering
-			\begin{tabular}{|c|c|c|}
-				\hline
-				\text{Measurement} & \text{XX basis equivalent} & \text{XX Expectation Value} \\
-				\hline
-				$|00\rangle$                & $|++\rangle$                         & 1                                    \\
-				\hline
-				$|01\rangle$                & $|+-\rangle$                         & -1                                   \\
-				\hline
-				$|10\rangle$                & $|-+\rangle$                         & -1                                   \\
-				\hline
-				$|11\rangle$                & $|--\rangle$                         & 1                                    \\
-				\hline
-			\end{tabular}
-		  \end{table}
+	      and so we can get the remaining expectation values \(\langle -+ |XX| -+\rangle = -1, \langle -- |XX|--\rangle = 1\)
+	      \begin{table}[H]
+		      \centering
+		      \begin{tabular}{|c|c|c|}
+			      \hline
+			      \text{Measurement} & \text{XX basis equivalent} & \text{XX Expectation Value} \\
+			      \hline
+			      $|00\rangle$       & $|++\rangle$               & 1                           \\
+			      \hline
+			      $|01\rangle$       & $|+-\rangle$               & -1                          \\
+			      \hline
+			      $|10\rangle$       & $|-+\rangle$               & -1                          \\
+			      \hline
+			      $|11\rangle$       & $|--\rangle$               & 1                           \\
+			      \hline
+		      \end{tabular}
+	      \end{table}
 
 \end{itemize}
 \subsection{Experimental Analysis (XX)}
-	From our circuit that produce the wavefunction \(|\phi(\vec{\theta})\rangle\) (see Figure \ref{fig:Figure 1}). We just need to apply two Hadamard gates to the qubits and measure the expectation value of the \(XX\) operator.
-	\begin{figure}[H]
-		\label{fig:Figure XX}
-		\centering
-		\includegraphics[width=0.7\textwidth, height=0.2\textheight]{XX.png}
-		\caption{Circuit for the \(XX\) operator}
-	\end{figure}
-	Give the trial wavefunction \(|\phi(\vec{\theta})\rangle = \cos\left(\frac{\theta}{2}\right)|01\rangle - \sin\left(\frac{\theta}{2}\right)|10\rangle\). Applying the Hadamard gates given:
-	\begin{align*}
-		(H \otimes H)|\phi(\vec{\theta})\rangle  &= (H \otimes H)(\cos\left(\frac{\theta}{2}\right)|01\rangle - \sin\left(\frac{\theta}{2}\right)|10\rangle) \\
-		                                         &= \cos\left(\frac{\theta}{2}\right)(H \otimes H)|01\rangle - \sin\left(\frac{\theta}{2}\right)(H \otimes H)|10\rangle \\
-		                                         &= \cos\left(\frac{\theta}{2}\right)|+-\rangle - \sin\left(\frac{\theta}{2}\right)|-+\rangle
-	\end{align*}
-	Then we apply the \(\text{CNOT}_{01}\) gate to the state:
-	\begin{align*}
-		&\text{CNOT}_{01}(\cos\left(\frac{\theta}{2}\right)|+-\rangle - \sin\left(\frac{\theta}{2}\right)|-+\rangle) =\\ 
-		&= \text{CNOT}_{01} \cos\left(\frac{\theta}{2}\right)\frac{1}{\sqrt{2}}\left(|00\rangle + |10\rangle\right) - \text{CNOT}_{01}\sin\left(\frac{\theta}{2}\right)\frac{1}{\sqrt{2}}\left(|00\rangle - |10\rangle\right) \\
-		&= \frac{1}{\sqrt{2}} \left[\text{CNOT}_{01}\left(\cos\left(\frac{\theta}{2}\right)-\sin\left(\frac{\theta}{2}\right)\right)|00\rangle+\text{CNOT}_{01}\left(\cos\left(\frac{\theta}{2}\right)+\sin\left(\frac{\theta}{2}\right)\right)|10\rangle\right]\\
-		&= \frac{1}{\sqrt{2}} \left[\left(\cos\left(\frac{\theta}{2}\right)-\sin\left(\frac{\theta}{2}\right)\right)|00\rangle+\left(\cos\left(\frac{\theta}{2}\right)+\sin\left(\frac{\theta}{2}\right)\right)|11\rangle\right]
-	\end{align*}
+From our circuit that produce the wavefunction \(|\phi(\vec{\theta})\rangle\) (see Figure \ref{fig:Figure 1}). We just need to apply two Hadamard gates to the qubits and measure the expectation value of the \(XX\) operator.
+\begin{figure}[H]
+	\label{fig:Figure XX}
+	\centering
+	\includegraphics[width=0.7\textwidth, height=0.2\textheight]{XX.png}
+	\caption{Circuit for the \(XX\) operator}
+\end{figure}
+\noindent Give the trial wavefunction \(|\phi(\vec{\theta})\rangle = \cos\left(\frac{\theta}{2}\right)|01\rangle - \sin\left(\frac{\theta}{2}\right)|10\rangle\). Applying the Hadamard gates given:
+\begin{align*}
+	(H \otimes H)|\phi(\vec{\theta})\rangle & = (H \otimes H)(\cos\left(\frac{\theta}{2}\right)|01\rangle - \sin\left(\frac{\theta}{2}\right)|10\rangle)                                                                                                                                                                            \\
+	                                        & =  \cos\left(\frac{\theta}{2}\right)(H|0\rangle \otimes H|1\rangle) - \sin\left(\frac{\theta}{2}\right)(H|1\rangle \otimes H|0\rangle)                                                                                                                                                \\
+	                                        & = \cos\left(\frac{\theta}{2}\right)\left[\frac{1}{\sqrt{2}}(|0\rangle+|1\rangle) \otimes \frac{1}{\sqrt{2}}(|0\rangle - |1\rangle)\right] - \sin\left(\frac{\theta}{2}\right)\left[\frac{1}{\sqrt{2}}(|0\rangle - |1\rangle) \otimes \frac{1}{\sqrt{2}}(|0\rangle + |1\rangle)\right] \\
+	                                        & = \cos\left(\frac{\theta}{2}\right)\left[\frac{1}{2}(|00\rangle - |01\rangle + |10\rangle - |11\rangle)\right] - \sin\left(\frac{\theta}{2}\right)\left[\frac{1}{2}(|00\rangle + |01\rangle - |10\rangle - |11\rangle)\right] 
+\end{align*}
+Then we apply the \(\text{CNOT}_{01}\) gate to the state:
+\begin{align*}
+	 & \text{CNOT}_{01} \left\{\cos\left(\frac{\theta}{2}\right)\left[\frac{1}{2}(|00\rangle - |01\rangle + |10\rangle - |11\rangle)\right] - \sin\left(\frac{\theta}{2}\right)\left[\frac{1}{2}(|00\rangle + |01\rangle - |10\rangle - |11\rangle)\right]\right\} \\
+	 &= \cos\left(\frac{\theta}{2}\right)\left[\frac{1}{2}\text{CNOT}_{01}(|00\rangle - |01\rangle + |10\rangle - |11\rangle)\right] - \sin\left(\frac{\theta}{2}\right)\left[\frac{1}{2}\text{CNOT}_{01}(|00\rangle + |01\rangle - |10\rangle - |11\rangle)\right] \\
+	 &= \cos\left(\frac{\theta}{2}\right)\left[\frac{1}{2}(|00\rangle - |01\rangle + |11\rangle - |10\rangle)\right] - \sin\left(\frac{\theta}{2}\right)\left[\frac{1}{2}(|00\rangle + |01\rangle - |11\rangle - |10\rangle)\right]
+\end{align*}
 
 
 \section{Bell Measurement (Incomplete)}
