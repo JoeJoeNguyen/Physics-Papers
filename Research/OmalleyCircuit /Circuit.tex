@@ -6,7 +6,7 @@
 \usepackage[]{amssymb} %gives us the character \varnothing
 \usepackage[]{setspace} %provides commands to set line spacing
 \usepackage[left=0.75in, right=0.75in]{geometry}
-\usepackage{hyperref}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=red, citecolor=blue]{hyperref}
 \usepackage{xcolor}
 \usepackage{soul}
 \usepackage{amsmath}
@@ -14,6 +14,7 @@
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{float}
+\usepackage{braket}
 
 
 
@@ -656,16 +657,21 @@ From our circuit that produce the wavefunction \(|\phi(\vec{\theta})\rangle\) (s
 \end{figure}
 \noindent Give the trial wavefunction \(|\phi(\vec{\theta})\rangle = \cos\left(\frac{\theta}{2}\right)|01\rangle - \sin\left(\frac{\theta}{2}\right)|10\rangle\). Applying the Hadamard gates given:
 \begin{align*}
-	(H \otimes H)|\phi(\vec{\theta})\rangle & = (H \otimes H)(\cos\left(\frac{\theta}{2}\right)|01\rangle - \sin\left(\frac{\theta}{2}\right)|10\rangle)                                                                                                                                                                            \\
+	&(H \otimes H)|\phi(\vec{\theta})\rangle  \\
+	&= (H \otimes H)(\cos\left(\frac{\theta}{2}\right)|01\rangle - \sin\left(\frac{\theta}{2}\right)|10\rangle)                                                                                                                                                                            \\
 	                                        & =  \cos\left(\frac{\theta}{2}\right)(H|0\rangle \otimes H|1\rangle) - \sin\left(\frac{\theta}{2}\right)(H|1\rangle \otimes H|0\rangle)                                                                                                                                                \\
 	                                        & = \cos\left(\frac{\theta}{2}\right)\left[\frac{1}{\sqrt{2}}(|0\rangle+|1\rangle) \otimes \frac{1}{\sqrt{2}}(|0\rangle - |1\rangle)\right] - \sin\left(\frac{\theta}{2}\right)\left[\frac{1}{\sqrt{2}}(|0\rangle - |1\rangle) \otimes \frac{1}{\sqrt{2}}(|0\rangle + |1\rangle)\right] \\
-	                                        & = \cos\left(\frac{\theta}{2}\right)\left[\frac{1}{2}(|00\rangle - |01\rangle + |10\rangle - |11\rangle)\right] - \sin\left(\frac{\theta}{2}\right)\left[\frac{1}{2}(|00\rangle + |01\rangle - |10\rangle - |11\rangle)\right] 
+	                                        & = \cos\left(\frac{\theta}{2}\right)\left[\frac{1}{2}(|00\rangle - |01\rangle + |10\rangle - |11\rangle)\right] - \sin\left(\frac{\theta}{2}\right)\left[\frac{1}{2}(|00\rangle + |01\rangle - |10\rangle - |11\rangle)\right] \\
+											& = \frac{1}{2}\left\{\left[\cos\left(\frac{\theta}{2}\right) - \sin\left(\frac{\theta}{2}\right)\right]\ket{00} - \left[\cos\left(\frac{\theta}{2}\right) + \sin\left(\frac{\theta}{2}\right)\right] \ket{01} + \left[\cos\left(\frac{\theta}{2}\right) + \sin\left(\frac{\theta}{2}\right)\right] \ket{10} 
+											+ \left[\sin\left(\frac{\theta}{2}\right)- \cos\left(\frac{\theta}{2}\right) \right]\ket{11} \right\} \\
 \end{align*}
 Then we apply the \(\text{CNOT}_{01}\) gate to the state:
 \begin{align*}
 	 & \text{CNOT}_{01} \left\{\cos\left(\frac{\theta}{2}\right)\left[\frac{1}{2}(|00\rangle - |01\rangle + |10\rangle - |11\rangle)\right] - \sin\left(\frac{\theta}{2}\right)\left[\frac{1}{2}(|00\rangle + |01\rangle - |10\rangle - |11\rangle)\right]\right\} \\
 	 &= \cos\left(\frac{\theta}{2}\right)\left[\frac{1}{2}\text{CNOT}_{01}(|00\rangle - |01\rangle + |10\rangle - |11\rangle)\right] - \sin\left(\frac{\theta}{2}\right)\left[\frac{1}{2}\text{CNOT}_{01}(|00\rangle + |01\rangle - |10\rangle - |11\rangle)\right] \\
-	 &= \cos\left(\frac{\theta}{2}\right)\left[\frac{1}{2}(|00\rangle - |01\rangle + |11\rangle - |10\rangle)\right] - \sin\left(\frac{\theta}{2}\right)\left[\frac{1}{2}(|00\rangle + |01\rangle - |11\rangle - |10\rangle)\right]
+	 &= \cos\left(\frac{\theta}{2}\right)\left[\frac{1}{2}(|00\rangle - |01\rangle + |11\rangle - |10\rangle)\right] - \sin\left(\frac{\theta}{2}\right)\left[\frac{1}{2}(|00\rangle + |01\rangle - |11\rangle - |10\rangle)\right]\\
+	 & = \frac{1}{2}\left\{\left[\cos\left(\frac{\theta}{2}\right) - \sin\left(\frac{\theta}{2}\right)\right]\ket{00} - \left[\cos\left(\frac{\theta}{2}\right) + \sin\left(\frac{\theta}{2}\right)\right] \ket{01} + \left[\sin\left(\frac{\theta}{2}\right) - \cos\left(\frac{\theta}{2}\right)\right] \ket{10} 
+											+ \left[\sin\left(\frac{\theta}{2}\right)+ \cos\left(\frac{\theta}{2}\right) \right]\ket{11} \right\}
 \end{align*}
 
 
