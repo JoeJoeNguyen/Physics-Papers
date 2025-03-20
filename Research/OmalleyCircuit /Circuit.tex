@@ -419,7 +419,7 @@ Use \(\theta = -3.37\):
 \section{Unitary Couple Cluster Single Double (UCCSD)}
 \subsection{Coupled Cluster Theory}
 Couple Cluster theory was introduced for calculation nuclear binding energies. It is the gold standard for the balance between accucarcy and effiency. \\
-Key concepts: 
+Key concepts:
 \begin{itemize}
 	\item First quantization: individual particles are described by wavefucntion \(\psi(x)\) that satisfies the Schrodinger equation.
 	\item Second quantization: instead of describing each particle separately, we define creation and annihilation operators that act on quantum states of an entire system.
@@ -429,7 +429,7 @@ The fundamental operators:
 	\item Creation operator: \(a^\dagger_i\) creates a particle in state \(i\).
 	\item Annihilation operator: \(a_i\) removes a particle from state \(i\).
 \end{itemize}
-Fermionic Second Quantization: We described electron using second quantization. 
+Fermionic Second Quantization: We described electron using second quantization.
 \[\ket{\Psi} = a^\dagger_1 a^\dagger_3 \ket{0}\]
 Which means we have occupied states 1 and 3 in the vaccum sate \(\ket{0}\).\\
 \section{Quantum Tomography}
@@ -671,24 +671,26 @@ From our circuit that produce the wavefunction \(|\phi(\vec{\theta})\rangle\) (s
 \end{figure}
 \noindent Give the trial wavefunction \(|\phi(\vec{\theta})\rangle = \cos\left(\frac{\theta}{2}\right)|01\rangle - \sin\left(\frac{\theta}{2}\right)|10\rangle\). Applying the Hadamard gates given:
 \begin{align*}
-	&(H \otimes H)|\phi(\vec{\theta})\rangle  \\
-	&= (H \otimes H)(\cos\left(\frac{\theta}{2}\right)|01\rangle - \sin\left(\frac{\theta}{2}\right)|10\rangle)                                                                                                                                                                            \\
-	                                        & =  \cos\left(\frac{\theta}{2}\right)(H|0\rangle \otimes H|1\rangle) - \sin\left(\frac{\theta}{2}\right)(H|1\rangle \otimes H|0\rangle)                                                                                                                                                \\
-	                                        & = \cos\left(\frac{\theta}{2}\right)\left[\frac{1}{\sqrt{2}}(|0\rangle+|1\rangle) \otimes \frac{1}{\sqrt{2}}(|0\rangle - |1\rangle)\right] - \sin\left(\frac{\theta}{2}\right)\left[\frac{1}{\sqrt{2}}(|0\rangle - |1\rangle) \otimes \frac{1}{\sqrt{2}}(|0\rangle + |1\rangle)\right] \\
-	                                        & = \cos\left(\frac{\theta}{2}\right)\left[\frac{1}{2}(|00\rangle - |01\rangle + |10\rangle - |11\rangle)\right] - \sin\left(\frac{\theta}{2}\right)\left[\frac{1}{2}(|00\rangle + |01\rangle - |10\rangle - |11\rangle)\right] \\
-											& = \frac{1}{2}\left\{\left[\cos\left(\frac{\theta}{2}\right) - \sin\left(\frac{\theta}{2}\right)\right]\ket{00} - \left[\cos\left(\frac{\theta}{2}\right) + \sin\left(\frac{\theta}{2}\right)\right] \ket{01} + \left[\cos\left(\frac{\theta}{2}\right) + \sin\left(\frac{\theta}{2}\right)\right] \ket{10} 
-											+ \left[\sin\left(\frac{\theta}{2}\right)- \cos\left(\frac{\theta}{2}\right) \right]\ket{11} \right\} \\
+	 & (H \otimes H)|\phi(\vec{\theta})\rangle                                                                                                                                                                                                                                                                    \\
+	 & = (H \otimes H)(\cos\left(\frac{\theta}{2}\right)|01\rangle - \sin\left(\frac{\theta}{2}\right)|10\rangle)                                                                                                                                                                                                 \\
+	 & =  \cos\left(\frac{\theta}{2}\right)(H|0\rangle \otimes H|1\rangle) - \sin\left(\frac{\theta}{2}\right)(H|1\rangle \otimes H|0\rangle)                                                                                                                                                                     \\
+	 & = \cos\left(\frac{\theta}{2}\right)\left[\frac{1}{\sqrt{2}}(|0\rangle+|1\rangle) \otimes \frac{1}{\sqrt{2}}(|0\rangle - |1\rangle)\right] - \sin\left(\frac{\theta}{2}\right)\left[\frac{1}{\sqrt{2}}(|0\rangle - |1\rangle) \otimes \frac{1}{\sqrt{2}}(|0\rangle + |1\rangle)\right]                      \\
+	 & = \cos\left(\frac{\theta}{2}\right)\left[\frac{1}{2}(|00\rangle - |01\rangle + |10\rangle - |11\rangle)\right] - \sin\left(\frac{\theta}{2}\right)\left[\frac{1}{2}(|00\rangle + |01\rangle - |10\rangle - |11\rangle)\right]                                                                              \\
+	 & = \frac{1}{2}\left\{\left[\cos\left(\frac{\theta}{2}\right) - \sin\left(\frac{\theta}{2}\right)\right]\ket{00} - \left[\cos\left(\frac{\theta}{2}\right) + \sin\left(\frac{\theta}{2}\right)\right] \ket{01} + \left[\cos\left(\frac{\theta}{2}\right) + \sin\left(\frac{\theta}{2}\right)\right] \ket{10}
+	+ \left[\sin\left(\frac{\theta}{2}\right)- \cos\left(\frac{\theta}{2}\right) \right]\ket{11} \right\}                                                                                                                                                                                                         \\
 \end{align*}
 Then we apply the \(\text{CNOT}_{01}\) gate to the state:
 \begin{align*}
-	 & \text{CNOT}_{01} \left\{\cos\left(\frac{\theta}{2}\right)\left[\frac{1}{2}(|00\rangle - |01\rangle + |10\rangle - |11\rangle)\right] - \sin\left(\frac{\theta}{2}\right)\left[\frac{1}{2}(|00\rangle + |01\rangle - |10\rangle - |11\rangle)\right]\right\} \\
-	 &= \cos\left(\frac{\theta}{2}\right)\left[\frac{1}{2}\text{CNOT}_{01}(|00\rangle - |01\rangle + |10\rangle - |11\rangle)\right] - \sin\left(\frac{\theta}{2}\right)\left[\frac{1}{2}\text{CNOT}_{01}(|00\rangle + |01\rangle - |10\rangle - |11\rangle)\right] \\
-	 &= \cos\left(\frac{\theta}{2}\right)\left[\frac{1}{2}(|00\rangle - |01\rangle + |11\rangle - |10\rangle)\right] - \sin\left(\frac{\theta}{2}\right)\left[\frac{1}{2}(|00\rangle + |01\rangle - |11\rangle - |10\rangle)\right]\\
-	 & = \frac{1}{2}\left\{\left[\cos\left(\frac{\theta}{2}\right) - \sin\left(\frac{\theta}{2}\right)\right]\ket{00} - \left[\cos\left(\frac{\theta}{2}\right) + \sin\left(\frac{\theta}{2}\right)\right] \ket{01} + \left[\sin\left(\frac{\theta}{2}\right) - \cos\left(\frac{\theta}{2}\right)\right] \ket{10} 
-											+ \left[\sin\left(\frac{\theta}{2}\right)+ \cos\left(\frac{\theta}{2}\right) \right]\ket{11} \right\}
+	 & \text{CNOT}_{01} \left\{\cos\left(\frac{\theta}{2}\right)\left[\frac{1}{2}(|00\rangle - |01\rangle + |10\rangle - |11\rangle)\right] - \sin\left(\frac{\theta}{2}\right)\left[\frac{1}{2}(|00\rangle + |01\rangle - |10\rangle - |11\rangle)\right]\right\}                                                \\
+	 & = \cos\left(\frac{\theta}{2}\right)\left[\frac{1}{2}\text{CNOT}_{01}(|00\rangle - |01\rangle + |10\rangle - |11\rangle)\right] - \sin\left(\frac{\theta}{2}\right)\left[\frac{1}{2}\text{CNOT}_{01}(|00\rangle + |01\rangle - |10\rangle - |11\rangle)\right]                                              \\
+	 & = \cos\left(\frac{\theta}{2}\right)\left[\frac{1}{2}(|00\rangle - |01\rangle + |11\rangle - |10\rangle)\right] - \sin\left(\frac{\theta}{2}\right)\left[\frac{1}{2}(|00\rangle + |01\rangle - |11\rangle - |10\rangle)\right]                                                                              \\
+	 & = \frac{1}{2}\left\{\left[\cos\left(\frac{\theta}{2}\right) - \sin\left(\frac{\theta}{2}\right)\right]\ket{00} - \left[\cos\left(\frac{\theta}{2}\right) + \sin\left(\frac{\theta}{2}\right)\right] \ket{01} + \left[\sin\left(\frac{\theta}{2}\right) - \cos\left(\frac{\theta}{2}\right)\right] \ket{10}
+	+ \left[\sin\left(\frac{\theta}{2}\right)+ \cos\left(\frac{\theta}{2}\right) \right]\ket{11} \right\}
 \end{align*}
-
-
+After applying \(\text{CNOT}_{01}\) gate.
+\[\underbrace{\ket{00}}_{even} \rightarrow \ket{0\textcolor{red}{0}}; \; \underbrace{\ket{01}}_{odd} \rightarrow \ket{0\textcolor{blue}{1}}; \; \underbrace{\ket{10}}_{odd} \rightarrow \ket{1 \textcolor{blue}{1}}; \; \underbrace{\ket{11}}_{even} \rightarrow \ket{1\textcolor{red}{0}}\]
+We can see that after applying the \(\text{CNOT}_{01}\) gate, the second qubit is flipped (the colored). Now measuring just the second qubit give us the parity of the state. If the parity is even we will see 0 and if the parity is odd we will see 1. A CNOT gate is used to compute the parity
+of two qubits and store it in one qubit without fully collapsing the state. Now measuring the second qubit \\
 \section{Bell Measurement (Incomplete)}
 Alternatively, using Bell Measurement to reconstruct the trial wavefunction with the parameter \(\theta \approx -3.37\), getting the expectation after 1000 measurements:
 \begin{figure}[H]
