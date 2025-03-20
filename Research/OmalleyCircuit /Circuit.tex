@@ -417,7 +417,21 @@ Use \(\theta = -3.37\):
 \end{equation*}
 \textbf{*Note: This does not match the calculation, I had to switch place between the \(|01\rangle\) and \(|10\rangle\) to match the qiskit ordering}
 \section{Unitary Couple Cluster Single Double (UCCSD)}
-To be continued...
+\subsection{Coupled Cluster Theory}
+Couple Cluster theory was introduced for calculation nuclear binding energies. It is the gold standard for the balance between accucarcy and effiency. \\
+Key concepts: 
+\begin{itemize}
+	\item First quantization: individual particles are described by wavefucntion \(\psi(x)\) that satisfies the Schrodinger equation.
+	\item Second quantization: instead of describing each particle separately, we define creation and annihilation operators that act on quantum states of an entire system.
+\end{itemize}
+The fundamental operators:
+\begin{itemize}
+	\item Creation operator: \(a^\dagger_i\) creates a particle in state \(i\).
+	\item Annihilation operator: \(a_i\) removes a particle from state \(i\).
+\end{itemize}
+Fermionic Second Quantization: We described electron using second quantization. 
+\[\ket{\Psi} = a^\dagger_1 a^\dagger_3 \ket{0}\]
+Which means we have occupied states 1 and 3 in the vaccum sate \(\ket{0}\).\\
 \section{Quantum Tomography}
 The expectation value (Quantum Tomography):
 \hl{Using many measurements on identically prepared systems to get mean values of the some complete set of observables to reconstruct an estimate of the state. Quantum Tomography works to
