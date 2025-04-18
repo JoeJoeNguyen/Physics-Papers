@@ -1,7 +1,8 @@
 \documentclass{beamer}
 %Information to be included in the title page:
-
+\usepackage{braket}
 \usecolortheme{beaver}
+\usetheme{CambridgeUS}
 \title{VQE}
 \author{Son Nguyen}
 \institute{Stevens Institute of Technology}
@@ -10,9 +11,65 @@
 \begin{document}
 \logo{\includegraphics[width=1.5cm]{stevens.pdf}}
 \frame{\titlepage}
+\begin{frame}
+    \frametitle{Abstract}
+    \begin{block}{Motivation}
+        The Variational Quantum Eigensolver uses the variational principle to
+         compute the ground state energy of a Hamiltonian, which is the first step in computing 
+         the energetic properties of a molecule. The potential of VQE can be used for drug discovery,
+         material science, chemical engineering.
+    \end{block}
+    \begin{block}{Advantage}
+        An array of qubits obeys the laws of quantum mechanics, which allows for the simulation of electronic
+         wavefunctions. Encoding the wavefunctions of a molecule on conventional computers is exponentially costly, while it only
+         requires a linear growing number of qubits on a quantum computer.
+    \end{block}
+\end{frame}
+\begin{frame}
+    \frametitle{Components}
+    \begin{itemize}
+        \item \textbf{Hamiltonian}: the matrix that describes the energy of a system. It can be written as a sum of Pauli operators. The number
+         of terms increases with the system size relatively slowly.
+        \item \textbf{Ansatz}: It needs to be expressive enough to represent the ground state of the Hamiltonian, but also simple enough to be
+         efficiently optimized. 
+        \item \textbf{Optimizer}: The optimizer significantly impacts the convergence rate of VQE optimization and the overall cost of the algorithm.
+    \end{itemize}
+\end{frame}
+\begin{frame}
+    \frametitle{Obstacles}
+    \begin{block}{Measurement}
+        Despite scaling polynomially, the number of measurements needed will grow rapidly along with the system's size. We need a more efficient measurement method.
+        In order to achieve precision with \(\epsilon\) error of the expecation value of an operator, we are required to perform \(O(1/\epsilon^2)\) measurements.
+    \end{block}
+    \begin{block}{The Barren Plateau}
+        The barren plateau is a phenomenon that occurs in the optimization of quantum circuits, where the gradients of the cost function become exponentially small as the number of qubits increases. This makes it difficult to find the optimal parameters for the ansatz.
+    \end{block}
+\end{frame}
+\begin{frame}
+    \frametitle{Formal Definition}
+    Given a Hamiltonian \(\hat{H}\), and a trial wavefunction \(\ket{\varphi}\), the ground state energy \(E_0\) of the Hamiltonian ,is bouned by:
+    \begin{equation}
+        E_0 \leq \frac{\bra{\varphi} \hat{H} \ket{\varphi}}{\braket{\varphi | \varphi}}
+    \end{equation}
+    VQE's job is to find a parameterization of \(\ket{\varphi(\vec{\theta})}\), such that the expectation value of the Hamiltonian is minimized.
+\end{frame}
 
-\begin{frame}{Motivation}
-
+\begin{frame}
+    \frametitle{The Cost Function}
+    The trial wavefunction is produced by a variational quantum circuit (ansatz) \(U(\vec{\theta})\) acting on \(\ket{0}^{\otimes N}\),written as \(\ket{\textbf{0}}\) for simplicity, where \(N\) is the number of qubits. \(\vec{\theta}\) denoting the sets of parameters taking values in \((- \pi, \pi]\), the VQE optimzation problem can be written as:
+    \begin{equation}
+        E(\vec{\theta}) = \bra{\textbf{0}} U^{\dagger}(\vec{\theta}) \hat{H} U(\vec{\theta}) \ket{\textbf{0}}
+    \end{equation}
+\end{frame}
+% \begin{frame}
+%     \frametitle{The Optimizer}
+% \end{frame}
+\begin{frame}
+    \frametitle{References}
+    \begin{itemize}
+        \item \href{https://arxiv.org/pdf/2405.00781}{A Review of Barren Plateaus in Variational Quantum Computing}
+        \item \href{https://arxiv.org/pdf/2111.05176}{The Variational Quantum Eigensolver: a review of methods and best practices}
+    \end{itemize}
 \end{frame}
 
 \end{document}
