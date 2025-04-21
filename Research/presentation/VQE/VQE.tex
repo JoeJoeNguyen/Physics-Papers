@@ -53,6 +53,9 @@
     \end{equation}
     VQE's job is to find a parameterization of \(\ket{\varphi(\vec{\theta})}\), such that the expectation value of the Hamiltonian is minimized.
 \end{frame}
+\begin{frame}
+    \frametitle{The Hamiltonian}
+\end{frame}
 
 \begin{frame}
     \frametitle{The Cost Function}
@@ -61,9 +64,10 @@
         E(\vec{\theta}) = \bra{\textbf{0}} U^{\dagger}(\vec{\theta}) \hat{H} U(\vec{\theta}) \ket{\textbf{0}}
     \end{equation}
 \end{frame}
-% \begin{frame}
-%     \frametitle{The Optimizer}
-% \end{frame}
+\begin{frame}
+    \frametitle{The Optimizer}
+    The optimization of the VQE is NP-hard (nondeterministic polynomial-time hard). It means that there exist at least some problem in which finding an exact solution is computationally infeasible.
+\end{frame}
 \begin{frame}
     \frametitle{References}
     \begin{itemize}
