@@ -55,24 +55,61 @@
 \end{frame}
 \begin{frame}
     \frametitle{The Hamiltonian}
+    The Hamiltonian that describes the energy of Hydrogen molecule is:
+    \begin{equation}
+        H = g_0 \mathbb{I} + g_1 Z_0 + g_2 Z_1 + g_3 Z_0 Z_1 + g_4 Y_0 Y_1 + g_5 X_0 X_ 1
+    \end{equation}
+    Where the coefficients \(g_i\) will be dependent on the distance between atoms. 
 \end{frame}
-
+\begin{frame}
+    \frametitle{The Ansatz}
+    Using the UCC Theory to construct the ansatz: 
+    \begin{equation}
+        \ket{\varphi(\vec{\theta})} = U(\vec{\theta})\ket{\varphi} = e^{T(\vec{\theta})- T(\vec{\theta})^{\dagger}} \ket{\phi}
+    \end{equation}
+    Where \(\ket{\phi}\) is the reference Hatree Fock state. According to the UCC theory, the ground state of equation (2) can be expressed as:
+    \begin{equation}
+        \ket{\varphi(\theta)} = e^{-i\theta X_0 Y_1} \ket{01} 
+    \end{equation}
+    where \(\ket{\phi} = \ket{01}\). 
+\end{frame}
+\begin{frame}
+    \frametitle{The Circuit Visualization}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.8\textwidth]{circuit.png}
+        \includegraphics[width=0.8\textwidth]{circuit2.png}
+    \end{figure}
+\end{frame}
 \begin{frame}
     \frametitle{The Cost Function}
     The trial wavefunction is produced by a variational quantum circuit (ansatz) \(U(\vec{\theta})\) acting on \(\ket{0}^{\otimes N}\),written as \(\ket{\textbf{0}}\) for simplicity, where \(N\) is the number of qubits. \(\vec{\theta}\) denoting the sets of parameters taking values in \((- \pi, \pi]\), the VQE optimzation problem can be written as:
     \begin{equation}
         E(\vec{\theta}) = \bra{\textbf{0}} U^{\dagger}(\vec{\theta}) \hat{H} U(\vec{\theta}) \ket{\textbf{0}}
     \end{equation}
+    More specifically, from the Hamiltonian in equation (2), we can see that the cost function is a linear combination of the expectation values of the Pauli operators:
+    \begin{equation}
+        E(\vec{\theta}) = \sum_{\gamma}^{}g_\gamma \bra{\textbf{0}} U^{\dagger}(\vec{\theta}) \hat{H}_\gamma U(\vec{\theta}) \ket{\textbf{0}}
+    \end{equation}
+    Where \(\hat{H}_\gamma\) is the Pauli operator in the Hamiltonian.
 \end{frame}
 \begin{frame}
     \frametitle{The Optimizer}
-    The optimization of the VQE is NP-hard (nondeterministic polynomial-time hard). It means that there exist at least some problem in which finding an exact solution is computationally infeasible.
+    The optimization of the VQE is NP-hard (nondeterministic polynomial-time hard). It means that there exist at least some problems in which finding an exact solution is computationally infeasible.
+    \begin{alertblock}{Obstacles}
+        \begin{itemize}
+            \item Samping noise and gate noise on NISQ devices.
+            \item The number of shots for measurment is limited, which affects the precision of the optimization.
+            \item The above mentioned barren plateau phenomenon.
+        \end{itemize}
+    \end{alertblock}
 \end{frame}
 \begin{frame}
     \frametitle{References}
     \begin{itemize}
         \item \href{https://arxiv.org/pdf/2405.00781}{A Review of Barren Plateaus in Variational Quantum Computing}
         \item \href{https://arxiv.org/pdf/2111.05176}{The Variational Quantum Eigensolver: a review of methods and best practices}
+        \item \href{https://journals.aps.org/prx/abstract/10.1103/PhysRevX.6.031007}{Scalable Quantum Simulation of Molecular Energies}
     \end{itemize}
 \end{frame}
 
