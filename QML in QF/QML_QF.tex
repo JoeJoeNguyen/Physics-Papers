@@ -20,7 +20,6 @@ Finance}
 	as portfolio optimization, market prediction, trading, pricing, and risk management"
 \end{frame}
 \begin{frame}
-	\frametitle{Introduction}
 	\begin{block}{Challenges}
 		\begin{itemize}
 			\item Classical Bottle Neck: scalability struggling when the dimension of the data increases.
@@ -46,9 +45,126 @@ Finance}
 
 \begin{frame}
 	\frametitle{Portfolio Optimization - Classical Approach}
-    
-
+    The classical approach is formulated using mean-covariance optimization by Markowitz.
+	\begin{equation}minimize(q \cdot x^T Q x - \mu^T x); \quad \text{subjec to} \; 1^T x = B \end{equation}
+	\begin{itemize}
+		\item \(q > 0\) is the risk of the decision maker. 
+		\item Q is the covariance matrix of the asset returns.
+		\item \(\mu\) is the expected return vector for each asset.
+		\item B is the budget constraint.
+		\item x is the vector of asset weights.
+	\end{itemize}
+\end{frame}
+\begin{frame}
+	Q is the covariance matrix of asset returns. It is made of  time series covariances of each asset with every other asset. With the covariance matrix, there are an infinite number of combination
+	of allocations that a person can put. However, there is only a subsets of allocations that are optimal. In the end, we will have an \textit{efficient frontier} which is a set of optimal portfolios that offer the highest expected return for a given level of risk.
 \end{frame}
 
+\begin{frame}
+	\frametitle{Portfolio Optimization - Quantum Approach}
+	The equation (1) is a quadratic optimization problem. To be solved by a quantum computer, it has to be converted into a quadratic unconstrained binary optimization (QUBO) problem, i.e. the target
+	vector to found has to be expressed as vector of zeros and ones. 
+	\[x \in \{0,1\}^n\]
+	Now that the problem is in the form of QUBO, Binary values can be represented as qubits. The quadratic form can be represented as interation between qubits. The minimization task becomes \textit{ground state search} that can be solved by QML algorithms such as VQE.
+\end{frame}
+\begin{frame}
+	\begin{block}{Advantages of Quantum Portfolio Optimization}
+		\begin{itemize}
+			\item Large Scale Data: Quantum computers can handle large-scale data sets more efficiently than classical computers.
+			\item Speed: Quantum algorithms can potentially solve optimization problems faster than classical algorithms.
+			\item Improved Accuracy: Quantum algorithms can provide more accurate solutions to optimization problems.
+		\end{itemize}
+	\end{block}
+\end{frame}
+\begin{frame}
+	\frametitle{Market Prediction and Pricing}
+	\begin{block}{Objective}
+		Market prediction and pricing involve forecasting the future prices of financial assets and determining their fair value. This is crucial for making informed investment decisions and managing risk.
+		It involes analyzing historical data, market trends, and various factors that influence asset prices. Market predictive include fundamental analysis, technical analysis, and sentiment analysis, quantitative modeling, and
+		microstructure analysis.
+	\end{block}
+	
 
+\end{frame}
+\begin{frame}
+	\frametitle{Market Prediction and Pricing - Classical Approach}
+	\begin{itemize}
+		\item Fundamental Analysis: Involves analyzing financial statements, economic indicators, and other fundamental factors to assess the intrinsic value of an asset.
+		\item Technical Analysis: Involves analyzing historical price and volume data to identify patterns and trends that can help predict future price movements.
+		\item Quantitative Modeling: Involves using mathematical and statistical models to analyze financial data and make predictions.
+		\item Sentimental Analysis: Involves analyzing news articles, social media, and other sources of information to gauge market sentiment and its impact on asset prices.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\begin{itemize}
+		\item Microstructure analysis: Involves studying the structure and behavior of financial markets, including order flow, liquidity, and trading strategies.  By studying the dynamics of order and flow, market impact, and price discovery processes, quantitative analysts can gain insights into market behavior and optimize their trading strategies accordingly.
+		\item Algorithmic Trading: Involves using computer algorithms to execute trades based on predefined criteria. These algorithms can analyze market data, identify trading opportunities, and execute trades at high speeds.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Market Prediction and Trading - Quantum Approach}
+	\begin{itemize}
+		\item In quantum framework, market states are encoded into quantum states, and policies and value functions are represented using Quantum Neural Networks. The effectiveness of this approach
+	is compared against the Black-Scholes delta hedge model, and the results show that the QNN policies outperformed the traditional model significantly. 
+		\item Quantum Algorithms for Determinantal Point Process (DPP) were applied to enhance Random Forest (RF) models for churn prediction. These Quantum ML algorithms improved precision by 6\% compared to baseline models. 
+	\end{itemize}
+	
+
+\end{frame}
+\begin{frame}
+	\frametitle{Risk Management}
+		\begin{block}{Objective}
+			Value at Risk (VaR) is a widely used risk management tool that estimates the potential loss in value of an asset or portfolio over a specified time period, given a certain confidence level. It helps financial institutions and investors assess the risk associated with their investments and make informed decisions.
+		\end{block}
+\end{frame}
+\begin{frame}
+	\frametitle{Risk Management - Classical Approach}
+	Let consider a portfolio of K assets where, \(\mathbb{L} \equiv (L_1, L_2, ..., L_K) \) with \(L_i \in \mathbb{R}_+\) denote possible losses associated with the relevant assets.
+	The total loss is \(\mathbf{L} \equiv \sum_{i\in[K]}L_i\), and its expected value is given by: \(E[\mathbf{L}] = \sum_{i \in [k]} E[L_i]\). \(\alpha \in [0,1]\) is the confidence level. Var is defined as:
+	\begin{equation}
+		VaR_\alpha[\mathbf{L}] \equiv \inf\{p \in \mathbb{R}_+ : P(\mathbf{L} \leq p) \geq \alpha\}
+	\end{equation}
+	\(p\) is the threshold value of the loss, and \(P(\mathbf{L} \leq p)\) is the probability that the total loss is less than or equal to \(p\). The VaR at a given confidence level \(\alpha\) represents the maximum expected loss over a specified time period with a probability of \(1 - \alpha\).
+	\(CVar\) is the conditional value at risk, which is the expected loss given that the loss exceeds the VaR threshold. It provides a more comprehensive view of risk by considering the tail of the loss distribution.
+	
+
+\end{frame}
+\begin{frame}
+	The Economic Capital Requirement (ECR) is the amount of capital that a financial institution needs to hold to cover potential losses from its portfolio.
+	\begin{equation}
+		ECR_\alpha[\mathbf{L}] \equiv VaR_\alpha[\mathbf{L}] - E[\mathbf{L}]
+	\end{equation}
+\end{frame}
+\begin{frame}
+	\frametitle{Risk Management - Quantum Approach}
+	\begin{block}{Quantum Amplitude Amplification and Estimation (QAE)}
+	This Quantum Algorithm expanded upon Grover's algorithm. They provide quadratic speedup over classical sampling methods. Quantum Amplitude Amplification (QAA) is a quantum algorithm that can be used to enhance the probability of measuring a desired outcome in a quantum state.
+	Let say we have a quantum algorithm \(\mathbb{A}\) that prepares the state:
+	\begin{equation}
+		\mathbb{A} \ket{0} = \sqrt{p} \ket{good} + \sqrt{1-p} \ket{bad}
+	\end{equation}
+	Where \(\ket{good}\) is the desired outcome and \(\ket{bad}\) is the undesired outcome. The probability of measuring the desired outcome is \(p\). The QAA algorithm can be used to amplify the probability of measuring the desired outcome by applying a series of quantum operations.
+	\end{block}
+	
+
+\end{frame}
+\begin{frame}
+	\begin{block}{}
+		Quantum Amplitude Estimation (QAE) is a quantum algorithm that can be used to estimate the probability of measuring a desired outcome in a quantum state. It provides a quadratic speedup over classical Monte Carlo methods for estimating probabilities.
+	\end{block}
+\end{frame}
+\begin{frame}
+	\begin{block}{Advantages of Quantum Risk Management}
+		\begin{itemize}
+			\item QAE was utilized to price
+securities and assess VaR and Conditional VaR on a gate-based QPU. The implementation of
+this algorithm and the trade-off between convergence rate and circuit depth were demonstrated,
+indicating a near quadratic speed-up compared to Monte Carlo methods as circuit depths increase
+gradually. 
+			\item The quantum algorithm based on QAE for VaR to efficiently estimate of credit risk using ECR surpassed classical Monte Carlo methods.
+		\end{itemize}
+	\end{block}
+\end{frame}
 \end{document}
