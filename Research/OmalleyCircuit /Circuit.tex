@@ -862,6 +862,7 @@ The minimum energy can be found using classical optimization techniques.
 \[E_{min} = \langle \phi_{min}(\vec{\theta}) \mid H \mid \phi_{min}(\vec{\theta}) \rangle\]
 
 \section{Experiment}
+\subsection{Mapping}
 From equation \eqref{eq:ansatz}, we have a trial wavefunction of:
 \begin{equation}
 	|\phi(\vec{\theta})\rangle = 0\ket{00} + \cos\left(\frac{\theta}{2}\right)|01\rangle - \sin\left(\frac{\theta}{2}\right)|10\rangle + 0\ket{11}
@@ -875,10 +876,17 @@ For this experiment, we will use "01"/"10" Spatial Mode as our first qubit and P
 \begin{align*}
 	&\ket{0} = \text{Spatial Mode 01 and Vertical Polarization or } \ket{0}_s, \ket{0}_p  \\
 	&\ket{1} = \text{Spatial Mode 10 and Horizontal Polarization or } \ket{1}_s, \ket{1}_p \\
-	&\frac{\ket{0}-i\ket{1}}{\sqrt{2}} = \text{North Pole of the Poincare Sphere or Right-circular Polarization} \ket{R}_s, \ket{R}_p \\
-	&\frac{\ket{0}+i\ket{1}}{\sqrt{2}} = \text{South Pole of the Poincare Sphere or Left-circular Polarization} \ket{L}_s, \ket{L}_p\\
-	&\ket{+} = \text{Diagonal Polarization} \ket{D}_s, \ket{D}_p \\
-	&\ket{-} = \text{Anti-diagonal Polarization} \ket{A}_s, \ket{A}_p
+	&\frac{\ket{0}-i\ket{1}}{\sqrt{2}} = \text{North Pole of the Poincare Sphere or Right-circular Polarization} \frac{\ket{R}_s}{\sqrt{2}}, \frac{\ket{R}_p}{\sqrt{2}} \\
+	&\frac{\ket{0}+i\ket{1}}{\sqrt{2}} = \text{South Pole of the Poincare Sphere or Left-circular Polarization} \frac{\ket{L}_s}{\sqrt{2}}, \frac{\ket{L}_p}{\sqrt{2}}\\
+	&\ket{+} = \text{Diagonal Polarization} \frac{\ket{D}_s}{\sqrt{2}}, \frac{\ket{D}_p}{\sqrt{2}} \\
+	&\ket{-} = \text{Anti-diagonal Polarization} \frac{\ket{A}_s}{\sqrt{2}}, \frac{\ket{A}_p}{\sqrt{2}}
 \end{align*}
 Therefore our initial state is \( \ket{0}_s \otimes \ket{0}_p \equiv \ket{0_s 0_p}\)
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth, height=0.3\textheight]{phaseShift.jpeg}
+	\caption{\href{https://opg.optica.org/ol/fulltext.cfm?uri=ol-24-7-430&id=37205}{Geometric Phase Shift}}	
+\end{figure}
+\section{Optical Circuit}
+
 \end{document}
