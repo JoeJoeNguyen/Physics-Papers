@@ -15,6 +15,7 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{braket}
+\usepackage{gensymb}
 
 
 
@@ -439,7 +440,7 @@ The UCC ansatz \(\ket{\phi(\vec{\theta}})\) is constructed from the reference st
 \begin{equation}
 	\ket{\phi(\vec{\theta}}) = e^{T(\vec{\theta})-T(\vec{\theta})^\dagger}\ket{\varphi}
 \end{equation}
-Where \(T(\vec{\theta})\) is the anti-Hermitian cluster operator. 
+Where \(T(\vec{\theta})\) is the anti-Hermitian cluster operator.
 
 
 \section{Quantum Tomography}
@@ -874,103 +875,142 @@ From equation \eqref{eq:ansatz}, we have a trial wavefunction of:
 \end{figure}
 For this experiment, we will use "01"/"10" Spatial Mode as our first qubit and Polarization as our second qubit.
 \begin{align*}
-	&\ket{0} = \text{Spatial Mode 10 and Horizontal Polarization or } \ket{0}_s, \ket{0}_p  \\
-	&\ket{1} = \text{Spatial Mode 01 and Vertical Polarization or } \ket{1}_s, \ket{1}_p \\
-	&\frac{\ket{0}-i\ket{1}}{\sqrt{2}} = \text{South Pole of the Poincare Sphere or Left-circular Polarization} \frac{\ket{L}_s}{\sqrt{2}}, \frac{\ket{L}_p}{\sqrt{2}} \\
-	&\frac{\ket{0}+i\ket{1}}{\sqrt{2}} = \text{North Pole of the Poincare Sphere or Right-circular Polarization} \frac{\ket{R}_s}{\sqrt{2}}, \frac{\ket{R}_p}{\sqrt{2}}\\
-	&\ket{+} = \text{Diagonal Polarization} \frac{\ket{D}_s}{\sqrt{2}}, \frac{\ket{D}_p}{\sqrt{2}} \\
-	&\ket{-} = \text{Anti-diagonal Polarization} \frac{\ket{A}_s}{\sqrt{2}}, \frac{\ket{A}_p}{\sqrt{2}}
+	 & \ket{0} = \text{Spatial Mode 10 and Horizontal Polarization or } \ket{0}_s, \ket{0}_p                                                                              \\
+	 & \ket{1} = \text{Spatial Mode 01 and Vertical Polarization or } \ket{1}_s, \ket{1}_p                                                                                \\
+	 & \frac{\ket{0}-i\ket{1}}{\sqrt{2}} = \text{South Pole of the Poincare Sphere or Left-circular Polarization} \frac{\ket{L}_s}{\sqrt{2}}, \frac{\ket{L}_p}{\sqrt{2}}  \\
+	 & \frac{\ket{0}+i\ket{1}}{\sqrt{2}} = \text{North Pole of the Poincare Sphere or Right-circular Polarization} \frac{\ket{R}_s}{\sqrt{2}}, \frac{\ket{R}_p}{\sqrt{2}} \\
+	 & \ket{+} = \text{Diagonal Polarization} \frac{\ket{D}_s}{\sqrt{2}}, \frac{\ket{D}_p}{\sqrt{2}}                                                                      \\
+	 & \ket{-} = \text{Anti-diagonal Polarization} \frac{\ket{A}_s}{\sqrt{2}}, \frac{\ket{A}_p}{\sqrt{2}}
 \end{align*}
 Therefore our initial state is \( \ket{0}_p \otimes \ket{0}_s \equiv \ket{0_p 0_s}\)
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\textwidth, height=0.3\textheight]{phaseShift.jpeg}
-	\caption{\href{https://opg.optica.org/ol/fulltext.cfm?uri=ol-24-7-430&id=37205}{Geometric Phase Shift}}	
+	\caption{\href{https://opg.optica.org/ol/fulltext.cfm?uri=ol-24-7-430&id=37205}{Geometric Phase Shift}}
 \end{figure}
 \section{Optical Circuit}
-	Quarter-wave plate (QWP):
-	\begin{equation*}
-		e^{\frac{-i \pi}{4}}
-			\begin{bmatrix}
-				\cos^2 (\theta) + i \sin^2 (\theta) & (1-i) \sin(\theta)\cos(\theta) \\
-				(1-i) \sin(\theta)\cos(\theta) & \sin^2 (\theta) + i \cos^2(\theta)
-			\end{bmatrix}
-	\end{equation*}
-	Quarter-wave plate with fast axis vertical (QWPv):
-	\begin{equation*}
-		e^{\frac{i \pi}{4}}
-		\begin{bmatrix}
-			1 & 0 \\
-			0 & -i
-		\end{bmatrix}
-	\end{equation*}
-	Quarter-wave plate with fast axis horizontal (QWPh):
-	\begin{equation*}
-		e^{\frac{-i \pi}{4}}
-		\begin{bmatrix}
-			1 & 0 \\
-			0 & i
-		\end{bmatrix}
-	\end{equation*}
-	Half-wave plate (HWP):
-	\begin{equation*}
-		\begin{bmatrix}
-			\cos(2\phi) & \sin(2\phi) \\
-			\sin(2\phi) & -\cos(2\phi)
-		\end{bmatrix}
-	\end{equation*}
-	Dove Prism (DP) using Rotation matrix:
-	\begin{equation*}
-		\begin{bmatrix}
-			\cos(\omega) & -\sin(\omega) \\
-			\sin(\omega) & \cos(\omega)
-		\end{bmatrix}
-	\end{equation*}
-	Combination of QWP - HWP - QWP:
-	\begin{align}
-			&\begin{bmatrix}
-				\cos^2 (\theta) + i \sin^2 (\theta) & (1-i) \sin(\theta)\cos(\theta) \\
-				(1-i) \sin(\theta)\cos(\theta) & \sin^2 (\theta) + i \cos^2(\theta)
-			\end{bmatrix}
-		\cdot
-		\begin{bmatrix}
-			\cos(2\phi) & \sin(2\phi) \\
-			\sin(2\phi) & -\cos(2\phi)
-		\end{bmatrix}
-		\cdot
-			\begin{bmatrix}
-				\cos^2 (\theta) + i \sin^2 (\theta) & (1-i) \sin(\theta)\cos(\theta) \\
-				(1-i) \sin(\theta)\cos(\theta) & \sin^2 (\theta) + i \cos^2(\theta)
-			\end{bmatrix}\\
-		&= \begin{bmatrix}
-			y^2 + i x^2 & (1-i)xy \\
-			(1-i)xy & x^2 + i y^2
-		\end{bmatrix}
-		\cdot
-		\begin{bmatrix}
-			b & a \\
-			a & -b
-		\end{bmatrix}
-		\cdot
-		\begin{bmatrix}
-			y^2 + i x^2 & (1-i)xy \\
-			(1-i)xy & x^2 + i y^2
-		\end{bmatrix} \\
-		&= \begin{bmatrix}
-			b(y^2 + i x^2)^2 & -2iaxy^2 \\
-			-2iaxy^2 & -b(x^2 + i y^2)^2
-		\end{bmatrix}
-		\label{eq:13}
-	\end{align}
-To set the \(R_x(\frac{\pi}{2})\) gate from equation \eqref{eq:13}:
+Quarter-wave plate (QWP):
+\begin{equation*}
+	e^{\frac{-i \pi}{4}}
+	\begin{bmatrix}
+		\cos^2 (\theta) + i \sin^2 (\theta) & (1-i) \sin(\theta)\cos(\theta)     \\
+		(1-i) \sin(\theta)\cos(\theta)      & \sin^2 (\theta) + i \cos^2(\theta)
+	\end{bmatrix}
+\end{equation*}
+Quarter-wave plate with fast axis vertical (QWPv):
+\begin{equation*}
+	e^{\frac{i \pi}{4}}
+	\begin{bmatrix}
+		1 & 0  \\
+		0 & -i
+	\end{bmatrix}
+\end{equation*}
+Quarter-wave plate with fast axis horizontal (QWPh):
+\begin{equation*}
+	e^{\frac{-i \pi}{4}}
+	\begin{bmatrix}
+		1 & 0 \\
+		0 & i
+	\end{bmatrix}
+\end{equation*}
+Half-wave plate (HWP):
+\begin{equation*}
+	\begin{bmatrix}
+		\cos(2\phi) & \sin(2\phi)  \\
+		\sin(2\phi) & -\cos(2\phi)
+	\end{bmatrix}
+\end{equation*}
+Dove Prism (DP) using Rotation matrix:
+\begin{equation*}
+	\begin{bmatrix}
+		\cos(\omega) & -\sin(\omega) \\
+		\sin(\omega) & \cos(\omega)
+	\end{bmatrix}
+\end{equation*}
+Combination of QWP-1 - HWP - QWP-2:
 \begin{align}
-	&\begin{bmatrix}
-			b(y^2 + i x^2)^2 & -2iaxy^2 \\
-			-2iaxy^2 & -b(x^2 + i y^2)^2
-		\end{bmatrix} = 
-		\begin{bmatrix}
-			\frac{1}{\sqrt{2}} & \frac{-i}{\sqrt{2}} \\
-			\frac{-i}{\sqrt{2}} & \frac{1}{\sqrt{2}}
-		\end{bmatrix}
+	 & \begin{bmatrix}
+		   \cos^2 (\theta) + i \sin^2 (\theta) & (1-i) \sin(\theta)\cos(\theta)     \\
+		   (1-i) \sin(\theta)\cos(\theta)      & \sin^2 (\theta) + i \cos^2(\theta)
+	   \end{bmatrix}
+	\cdot
+	\begin{bmatrix}
+		\cos(2\phi) & \sin(2\phi)  \\
+		\sin(2\phi) & -\cos(2\phi)
+	\end{bmatrix}
+	\cdot
+	\begin{bmatrix}
+		\cos^2 (\omega) + i \sin^2 (\omega) & (1-i) \sin(\omega)\cos(\omega)     \\
+		(1-i) \sin(\omega)\cos(\omega)      & \sin^2 (\omega) + i \cos^2(\omega)
+	\end{bmatrix}    \\
+	 & = \begin{bmatrix}
+		     y^2 + i x^2 & (1-i)xy     \\
+		     (1-i)xy     & x^2 + i y^2
+	     \end{bmatrix}
+	\cdot
+	\begin{bmatrix}
+		b & a  \\
+		a & -b
+	\end{bmatrix}
+	\cdot
+	\begin{bmatrix}
+		z^2 + i k^2 & (1-i)kz    \\
+		(1-i)kz     & k^2 + i z^2
+	\end{bmatrix}
 \end{align}
+
+\[R_x(\frac{\pi}{2}) = \begin{bmatrix}
+		\frac{1}{\sqrt{2}}  & \frac{-i}{\sqrt{2}} \\
+		\frac{-i}{\sqrt{2}} & \frac{1}{\sqrt{2}}
+	\end{bmatrix} = \frac{1}{\sqrt{2}}
+	\begin{bmatrix}
+		1 & -i \\
+		-i & 1
+	\end{bmatrix}
+\]
+\[R_y(\frac{\pi}{2}) = \begin{bmatrix}
+		\frac{1}{\sqrt{2}} & \frac{-1}{\sqrt{2}} \\
+		\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}
+	\end{bmatrix}\]
+\[
+	R_z(\theta) = e^{-iZ(\frac{\theta}{2})} =
+	\begin{bmatrix}
+		e^{-i \frac{\theta}{2}} & 0                      \\
+		0                       & e^{i \frac{\theta}{2}}
+	\end{bmatrix}
+	= \begin{bmatrix}
+		\cos(\frac{\theta}{2}) - i \sin(\frac{\theta}{2}) & 0                      \\
+		0                                                  & \cos(\frac{\theta}{2}) + i \sin(\frac{\theta}{2})
+	\end{bmatrix}
+\]
+$R_x(\frac{\pi}{2})$ realization in the optical circuit for Polarization:
+
+\begin{align*}
+	&\text{QWP}(45\degree)= 
+	\begin{bmatrix}
+		\cos^2 (\frac{\pi}{4}) + i \sin^2 (\frac{\pi}{4}) & (1-i) \sin(\frac{\pi}{4})\cos(\frac{\pi}{4})     \\
+		(1-i) \sin(\frac{\pi}{4})\cos(\frac{\pi}{4})      & \sin^2 (\frac{\pi}{4}) + i \cos^2(\frac{\pi}{4})
+	\end{bmatrix} \\[2ex]
+	&= \begin{bmatrix}
+		\frac{1}{2} + i \frac{1}{2} & (1-i) \frac{1}{2} \\
+		(1-i) \frac{1}{2}          & \frac{1}{2} + i \frac{1}{2}
+	\end{bmatrix} = 
+	\frac{1}{2} 
+	\begin{bmatrix}
+		1+i & (1-i) \\
+		(1-i) & 1+i
+	\end{bmatrix} = \frac{1+i}{2}
+	\begin{bmatrix}
+		1 & \frac{1-i}{1+i}\\
+		\frac{1-i}{1+i} & 1
+	\end{bmatrix} \\[2ex]
+	&= \frac{1+i}{2}
+	\begin{bmatrix}
+		1 & -i \\
+		-i & 1
+	\end{bmatrix}
+\end{align*}
+$R_y(\frac{\pi}{2})$ realization in the optical circuit for Spatial Mode:
+$R_z(\theta)$ realization in the optical circuit for Polarization:
+
 \end{document}
