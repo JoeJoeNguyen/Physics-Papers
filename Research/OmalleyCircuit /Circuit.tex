@@ -888,7 +888,11 @@ Therefore our initial state is \( \ket{0}_p \otimes \ket{0}_s \equiv \ket{0_p 0_
 	\includegraphics[width=0.7\textwidth, height=0.3\textheight]{phaseShift.jpeg}
 	\caption{\href{https://opg.optica.org/ol/fulltext.cfm?uri=ol-24-7-430&id=37205}{Geometric Phase Shift}}
 \end{figure}
+
+
 \section{Optical Circuit}
+\subsection{Optical Components}
+\href{https://en.wikipedia.org/wiki/Jones_calculus#Phase_retarders}{Reference} \\ \\
 Quarter-wave plate (QWP):
 \begin{equation*}
 	e^{\frac{-i \pi}{4}}
@@ -920,13 +924,14 @@ Half-wave plate (HWP):
 		\sin(2\phi) & -\cos(2\phi)
 	\end{bmatrix}
 \end{equation*}
-Dove Prism (DP) using Rotation matrix:
+\href{https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=146}{Dove Prism} (DP) using Rotation matrix:
 \begin{equation*}
 	\begin{bmatrix}
 		\cos(\omega) & -\sin(\omega) \\
 		\sin(\omega) & \cos(\omega)
 	\end{bmatrix}
 \end{equation*}
+\subsection{Realization of the Circuit}
 Combination of QWP-1 - HWP - QWP-2:
 \begin{align}
 	 & \begin{bmatrix}
@@ -971,6 +976,9 @@ Combination of QWP-1 - HWP - QWP-2:
 \[R_y(\frac{\pi}{2}) = \begin{bmatrix}
 		\frac{1}{\sqrt{2}} & \frac{-1}{\sqrt{2}} \\
 		\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}
+	\end{bmatrix} = \frac{1}{\sqrt{2}} \begin{bmatrix}
+		1 & -1 \\
+		1 & 1
 	\end{bmatrix}\]
 \[
 	R_z(\theta) = e^{-iZ(\frac{\theta}{2})} =
@@ -1011,6 +1019,16 @@ $R_x(\frac{\pi}{2})$ realization in the optical circuit for Polarization:
 	\end{bmatrix}
 \end{align*}
 $R_y(\frac{\pi}{2})$ realization in the optical circuit for Spatial Mode:
+\begin{align*}
+	\text{DP}(\frac{\pi}{4}) &= \begin{bmatrix}
+		\cos(\frac{\pi}{4}) & -\sin(\frac{\pi}{4}) \\
+		\sin(\frac{\pi}{4}) & \cos(\frac{\pi}{4})
+	\end{bmatrix} \\[2ex]
+	&= \begin{bmatrix}
+		\frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}} \\
+		\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}
+	\end{bmatrix}
+\end{align*}
 $R_z(\theta)$ realization in the optical circuit for Polarization:
 
 \end{document}
