@@ -932,37 +932,6 @@ Half-wave plate (HWP):
 	\end{bmatrix}
 \end{equation*}
 \subsection{Realization of the Circuit}
-Combination of QWP-1 - HWP - QWP-2:
-\begin{align}
-	 & \begin{bmatrix}
-		   \cos^2 (\theta) + i \sin^2 (\theta) & (1-i) \sin(\theta)\cos(\theta)     \\
-		   (1-i) \sin(\theta)\cos(\theta)      & \sin^2 (\theta) + i \cos^2(\theta)
-	   \end{bmatrix}
-	\cdot
-	\begin{bmatrix}
-		\cos(2\phi) & \sin(2\phi)  \\
-		\sin(2\phi) & -\cos(2\phi)
-	\end{bmatrix}
-	\cdot
-	\begin{bmatrix}
-		\cos^2 (\omega) + i \sin^2 (\omega) & (1-i) \sin(\omega)\cos(\omega)     \\
-		(1-i) \sin(\omega)\cos(\omega)      & \sin^2 (\omega) + i \cos^2(\omega)
-	\end{bmatrix}    \\
-	 & = \begin{bmatrix}
-		     y^2 + i x^2 & (1-i)xy     \\
-		     (1-i)xy     & x^2 + i y^2
-	     \end{bmatrix}
-	\cdot
-	\begin{bmatrix}
-		b & a  \\
-		a & -b
-	\end{bmatrix}
-	\cdot
-	\begin{bmatrix}
-		z^2 + i k^2 & (1-i)kz    \\
-		(1-i)kz     & k^2 + i z^2
-	\end{bmatrix}
-\end{align}
 
 \[R_x(\frac{\pi}{2}) = \begin{bmatrix}
 		\frac{1}{\sqrt{2}}  & \frac{-i}{\sqrt{2}} \\
@@ -994,7 +963,7 @@ Combination of QWP-1 - HWP - QWP-2:
 $R_x(\frac{\pi}{2})$ realization in the optical circuit for Polarization:
 
 \begin{align*}
-	&\text{QWP}(45\degree)= 
+	&\text{QWP}(\frac{\pi}{4})= 
 	\begin{bmatrix}
 		\cos^2 (\frac{\pi}{4}) + i \sin^2 (\frac{\pi}{4}) & (1-i) \sin(\frac{\pi}{4})\cos(\frac{\pi}{4})     \\
 		(1-i) \sin(\frac{\pi}{4})\cos(\frac{\pi}{4})      & \sin^2 (\frac{\pi}{4}) + i \cos^2(\frac{\pi}{4})
@@ -1030,5 +999,10 @@ $R_y(\frac{\pi}{2})$ realization in the optical circuit for Spatial Mode:
 	\end{bmatrix}
 \end{align*}
 $R_z(\theta)$ realization in the optical circuit for Polarization:
+\[\text{QWPh} \cdot \text{QWP}(\frac{-\pi}{4}) \cdot \text{HWP}(\frac{\pi}{2} - \frac{\phi}{4}) \cdot \text{QWP}(\frac{-\pi}{4}) \cdot \text{QWPh} = \begin{bmatrix}
+	-ie^{-\frac{i\phi}{2}} & 0 \\
+	0 & ie^{\frac{i\phi}{2}}
+\end{bmatrix}\]
+Mach-Zehnder Interferometer (MZI) realization in the optical circuit for Spatial Mode:
 
 \end{document}
