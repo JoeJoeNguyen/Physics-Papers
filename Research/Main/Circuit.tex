@@ -960,8 +960,16 @@ Half-wave plate (HWP):
 		0                                                  & \cos(\frac{\theta}{2}) + i \sin(\frac{\theta}{2})
 	\end{bmatrix}
 \]
-$R_x(\frac{\pi}{2})$ realization in the optical circuit for Polarization:
+\[H = \frac{1}{\sqrt{2}} \begin{bmatrix}
+		1 & 1 \\
+		1 & -1
+	\end{bmatrix}\]
+\[S^\dagger = \begin{bmatrix}
+	1 & 0 \\
+	0 & -i
+\end{bmatrix}\]
 
+$R_x(\frac{\pi}{2})$ realization in the optical circuit for Polarization:
 \begin{align*}
 	&\text{QWP}(\frac{\pi}{4})= 
 	\begin{bmatrix}
@@ -1003,6 +1011,17 @@ $R_z(\theta)$ realization in the optical circuit for Polarization:
 	-ie^{-\frac{i\phi}{2}} & 0 \\
 	0 & -ie^{\frac{i\phi}{2}}
 \end{bmatrix}\]
+Hadamard gate \((H)\) realization in the optical circuit for Polarization:
+\begin{align*}
+	\text{HWP}(\frac{\pi}{8}) &= \begin{bmatrix}
+		\cos(\frac{\pi}{8}) & \sin(\frac{\pi}{8})  \\
+		\sin(\frac{\pi}{8}) & -\cos(\frac{\pi}{8})
+	\end{bmatrix} \\[2ex]
+	&= \begin{bmatrix}
+		\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}  \\
+		\frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}}
+	\end{bmatrix}
+\end{align*}
 Mach-Zehnder Interferometer (MZI) realization in the optical circuit for Spatial Mode:
 
 \end{document}
