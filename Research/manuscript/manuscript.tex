@@ -1,8 +1,11 @@
 \documentclass[12pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath, amssymb}
+\usepackage[left=0.75in, right=0.75in]{geometry}
 \usepackage{graphicx}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=red, citecolor=blue]{hyperref}
 \usepackage{hyperref}
+\usepackage{float}
 
 \title{Optical Experiment Manuscript}
 \author{Son Nguyen}
@@ -13,16 +16,82 @@
 \maketitle
 \section{Introduction}
 In this manuscript, we will go through the detail of the optical experiment setup of the quantum circuit for Variational Quantum Eigensolver (VQE).
-\section{Experimental Setup}
-The experiment consists of:
-\begin{itemize}
-    \item A laser source.
-    \item Spatial light modulator (SLM).
-    \item Beam Splitter (BS).
-    \item Polarized Beam Splitter (PBS).
-    \item Half-Wave Plate (HWP).
-    \item Quarter-Wave Plate (QWP).
-    \item Dove Prism (DP).
-\end{itemize}
+\section{Components}
+\href{https://en.wikipedia.org/wiki/Jones_calculus#Phase_retarders}{Reference} \\ \\
+Quarter-wave plate (QWP):
+\begin{equation*}
+	e^{\frac{-i \pi}{4}}
+	\begin{bmatrix}
+		\cos^2 (\theta) + i \sin^2 (\theta) & (1-i) \sin(\theta)\cos(\theta)     \\
+		(1-i) \sin(\theta)\cos(\theta)      & \sin^2 (\theta) + i \cos^2(\theta)
+	\end{bmatrix}
+\end{equation*}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.25\textwidth]{QWP.png}
+    \caption{Quarter-wave plate}
+    \label{fig:qwp}
+\end{figure}
+Quarter-wave plate with fast axis vertical (QWPv):
+\begin{equation*}
+	e^{\frac{i \pi}{4}}
+	\begin{bmatrix}
+		1 & 0  \\
+		0 & -i
+	\end{bmatrix}
+\end{equation*}
+Quarter-wave plate with fast axis horizontal (QWPh):
+\begin{equation*}
+	e^{\frac{-i \pi}{4}}
+	\begin{bmatrix}
+		1 & 0 \\
+		0 & i
+	\end{bmatrix}
+\end{equation*}
+Half-wave plate (HWP):
+\begin{equation*}
+	\begin{bmatrix}
+		\cos(2\phi) & \sin(2\phi)  \\
+		\sin(2\phi) & -\cos(2\phi)
+	\end{bmatrix}
+\end{equation*}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.25\textwidth]{HWP.png}
+    \caption{Half-wave plate}
+    \label{fig:hwp}
+\end{figure}
+\href{https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=146}{Dove Prism} (DP) using Rotation matrix acting on the spatial mode:
+\begin{equation*}
+	\begin{bmatrix}
+		\cos(\omega) & -\sin(\omega) \\
+		\sin(\omega) & \cos(\omega)
+	\end{bmatrix}
+\end{equation*}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\textwidth]{DP.png}
+    \caption{Dove Prism}
+    \label{fig:dp}
+\end{figure}
+
+Beamsplitter (BS):
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.25\textwidth]{BS.png}
+    \caption{Beamsplitter}
+    \label{fig:bs}
+\end{figure}
+Polarizing beamsplitter (PBS):
+\begin{samepage}
+\nopagebreak[4]
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.35\textwidth]{PBS.png}
+    \caption{Polarizing Beamsplitter}
+    \label{fig:pbs}
+\end{figure}
+\end{samepage}
+\section{Gates Realization}
 
 \end{document}
