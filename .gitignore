@@ -13,6 +13,6 @@ CS334/.DS_Store
 !**/*.tex
 !**/*.png
 !**/*.jpeg
-
+!**/*.nb
 # Ensure the .gitignore file itself is not ignored
 !.gitignore
