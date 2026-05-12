@@ -134,7 +134,7 @@ Therefore our initial state is \( \ket{0}_p \otimes \ket{0}_s \equiv \ket{0_p 0_
         -i & 1
     \end{bmatrix}
 \end{equation}
-\noindent \(R_x\) acting on \(\ket{0}\) gives:
+\noindent \(R_x(\frac{\pi}{2})\) acting on \(\ket{0}\) gives:
 \begin{equation}
     R_x(\frac{\pi}{2}) \ket{0} = \frac{1}{\sqrt{2}}
     \begin{bmatrix}
@@ -213,6 +213,18 @@ We can extract the time-dependent electric field from the Jone's vector: \\ \\
     \includegraphics[width=0.4\textwidth]{EfieldRx.pdf}
     \caption{\(\frac{\ket{0} -i\ket{1}}{\sqrt{2}}\) Time-dependent electric field}
 \end{figure}
+Now we need to figure out the realization of \(R_x(\pi)\): \\ \\
+\(R_x(\pi) = \begin{bmatrix}
+    \cos(\frac{\pi}{2}) & -i \sin(\frac{\pi}{2}) \\
+    -i \sin(\frac{\pi}{2}) & \cos(\frac{\pi}{2})
+\end{bmatrix} = \begin{bmatrix}
+    0 & -i \\
+    -i & 0
+\end{bmatrix} = -i\begin{bmatrix}
+    0 & 1 \\
+    1 & 0
+\end{bmatrix}\)
+To realize \(R_x(\pi)\), we
 \subsection{Stokes vector measurement}
 The Stokes vector component can be calulated from \(E_x\) and \(E_y\) of the Jones vector:
 \begin{equation}
