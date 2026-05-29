@@ -87,7 +87,7 @@ We implement qubits using two degrees of freedom of a single photon: polarizatio
 \includegraphics[width=0.7\linewidth]{../Thesis/HWP.png}
 
 \small \begin{equation*}
-    H_{polarization} = \begin{bmatrix}
+    H = \begin{bmatrix}
 \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}}
 \end{bmatrix}
@@ -108,7 +108,25 @@ We implement qubits using two degrees of freedom of a single photon: polarizatio
 \label{fig:optical-component-gates}
 \end{figure}
 
-All components are mounted on motorized rotation stages to enable automated angle sweeps for calibration and tomography. The detection chain uses a PBS followed by single-photon detectors or power meters depending on source brightness; intensities are converted to Stokes parameters for state reconstruction.
+\begin{figure}[H]
+\centering
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\includegraphics[width=0.95\linewidth]{Mach-Zehnder-Spatial.png}
+
+\small Mach--Zehnder (spatial): interferometer for spatial-mode coupling and phase-controlled routing.
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\includegraphics[width=0.95\linewidth]{RzParamter.png}
+
+\small $R_z(\theta)$ parameter implementation: phase rotation realized via wave-plate sequence.
+\end{minipage}
+\caption{(Left) Mach--Zehnder spatial interferometer. (Right) $R_z$ parameter implementation for phase rotations.}
+\label{fig:mkz_rz}
+\end{figure}
+
+
 
 Single-qubit rotations are mapped to Jones matrices realized with QWP/HWP sequences. For example, an $R_x(\pi/2)$ operation is produced with a QWP at $45^\circ$ (up to a global phase). Two-qubit interactions are emulated by coupling polarization and spatial degrees via PBS+BS networks: a polarization-controlled mode flip implements a classical-optical analogue of a CNOT between polarization and path.
 
