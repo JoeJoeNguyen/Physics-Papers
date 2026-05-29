@@ -82,8 +82,6 @@ The optical sequence for the two-qubit UCCSD-inspired ansatz used here is:
 
 Calibration proceeds in three steps: optical axis alignment, wave-plate retardance verification, and BS splitting-ratio measurement. We reconstruct polarization states by measuring Stokes parameters $I,Q,U,V$ using HWP/QWP angle settings and a PBS; each variational circuit evaluation yields the intensities needed to compute the Hamiltonian expectation value.
 
-Tomographic reconstruction is performed assuming near-pure states and using linear inversion on the measured Stokes vector. Typical state-preparation fidelities (polarization tomography after the ansatz) are in the range 0.95--0.98 under stable alignment.
-
 We applied the optical ansatz to the two-qubit H$_2$ benchmark and measured energy estimates across the variational parameter sweep. The measured energy surface qualitatively matches the theoretical curve after applying a small calibration-phase offset. Key experimental observations:
 - Repeated measurements show shot-to-shot intensity fluctuation dominated by source and coupling drift; averaging over 50 shots reduces noise to acceptable levels for optimization.
 - The dominant systematic error is imperfect beam-splitter balance and residual birefringence in optics, which we partially compensate via calibration angles.
