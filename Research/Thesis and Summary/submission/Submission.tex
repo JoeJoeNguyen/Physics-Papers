@@ -68,6 +68,30 @@ We implement qubits using two degrees of freedom of a single photon: polarizatio
  Non-polarizing and polarizing beam splitters (BS, PBS) for spatial-mode coupling and polarization routing.
  Dove prisms (DP) for controlled spatial-mode rotations.
 
+\begin{figure}[H]
+\centering
+\begin{minipage}[t]{0.31\textwidth}
+\centering
+\includegraphics[width=0.9\linewidth]{../Thesis/QWP.png}
+
+\small $\mathrm{QWP}(\theta)$; gate: $R_x(\pi/2)$-type polarization rotation
+\end{minipage}\hfill
+\begin{minipage}[t]{0.31\textwidth}
+\centering
+\includegraphics[width=0.9\linewidth]{../Thesis/HWP.png}
+
+\small $\mathrm{HWP}(\phi)$; gate: polarization rotation gate
+\end{minipage}\hfill
+\begin{minipage}[t]{0.31\textwidth}
+\centering
+\includegraphics[width=0.9\linewidth]{../Thesis/DP.png}
+
+\small $\mathrm{DP}(\omega)$; gate: spatial-mode rotation gate
+\end{minipage}
+\caption{Quarter-wave plate, half-wave plate, and dove prism shown side by side with their corresponding matrices and quantum gate roles.}
+\label{fig:optical-component-gates}
+\end{figure}
+
 All components are mounted on motorized rotation stages to enable automated angle sweeps for calibration and tomography. The detection chain uses a PBS followed by single-photon detectors or power meters depending on source brightness; intensities are converted to Stokes parameters for state reconstruction.
 
 Single-qubit rotations are mapped to Jones matrices realized with QWP/HWP sequences. For example, an $R_x(\pi/2)$ operation is produced with a QWP at $45^\circ$ (up to a global phase). Two-qubit interactions are emulated by coupling polarization and spatial degrees via PBS+BS networks: a polarization-controlled mode flip implements a classical-optical analogue of a CNOT between polarization and path.
@@ -79,6 +103,7 @@ The optical sequence for the two-qubit UCCSD-inspired ansatz used here is:
 \item Entangle via PBS/BS stage that routes polarization-dependent amplitudes between spatial modes.
 \item Apply a phase gate on polarization implemented as a sequence of QWPs and HWPs (Jones-phase control).
 \end{enumerate}
+
 
 Calibration proceeds in three steps: optical axis alignment, wave-plate retardance verification, and BS splitting-ratio measurement. We reconstruct polarization states by measuring Stokes parameters $I,Q,U,V$ using HWP/QWP angle settings and a PBS; each variational circuit evaluation yields the intensities needed to compute the Hamiltonian expectation value.
 
