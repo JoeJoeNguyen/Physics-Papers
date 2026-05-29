@@ -128,7 +128,12 @@ We implement qubits using two degrees of freedom of a single photon: polarizatio
 \vspace{-1.2em}
 \raisebox{1.8em}{\includegraphics[width=0.8\linewidth]{RzParamter.png}}
 
-\small $R_z(\theta)$ parameter implementation: phase rotation realized via wave-plate sequence.
+\small \begin{equation*}
+    R_z(\theta) = - i\begin{bmatrix}
+        e^{-i\theta/2} & 0 \\
+        0 & e^{i\theta/2}
+    \end{bmatrix}
+\end{equation*}
 \end{minipage}
 \caption{(Left) CNOT for Spatial Modes as control qubit (Right) $R_z$ parameter implementation for phase rotations.}
 \label{fig:mkz_rz}
