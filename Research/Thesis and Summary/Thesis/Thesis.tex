@@ -197,13 +197,6 @@ For specific orientations:
 \end{bmatrix}
 \end{equation}
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.25\textwidth]{QWP.png}
-\caption{Quarter-wave plate schematic representation.}
-\label{fig:qwp}
-\end{figure}
-
 \subsubsection{Half-Wave Plate (HWP)}
 
 A half-wave plate introduces a phase retardation of $\pi$ between orthogonal polarization components. The Jones matrix for an HWP with fast axis at angle $\phi$ is:
@@ -213,13 +206,6 @@ A half-wave plate introduces a phase retardation of $\pi$ between orthogonal pol
 	\sin(2\phi) & -\cos(2\phi)
 \end{bmatrix}
 \end{equation}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.25\textwidth]{HWP.png}
-\caption{Half-wave plate schematic representation.}
-\label{fig:hwp}
-\end{figure}
 
 \subsection{Mode-Coupling Devices}
 
@@ -257,9 +243,26 @@ A dove prism rotates the spatial mode by acting as a rotation operator. The rota
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.3\textwidth]{DP.png}
-\caption{Dove prism schematic representation.}
-\label{fig:dp}
+\begin{minipage}[t]{0.31\textwidth}
+\centering
+\includegraphics[width=0.9\linewidth]{QWP.png}
+
+\small QWP: $\text{QWP}(\theta)$; gate role: $R_x(\pi/2)$-type polarization rotation
+\end{minipage}\hfill
+\begin{minipage}[t]{0.31\textwidth}
+\centering
+\includegraphics[width=0.9\linewidth]{HWP.png}
+
+\small HWP: $\text{HWP}(\phi)$; gate role: polarization rotation gate
+\end{minipage}\hfill
+\begin{minipage}[t]{0.31\textwidth}
+\centering
+\includegraphics[width=0.9\linewidth]{DP.png}
+
+\small Dove prism: $\text{DP}(\omega)$; gate role: spatial-mode rotation gate
+\end{minipage}
+\caption{Quarter-wave plate, half-wave plate, and dove prism shown side by side with their corresponding matrices and quantum gate roles.}
+\label{fig:optical-component-gates}
 \end{figure}
 
 %----------------------------------------------------------------------------------------
