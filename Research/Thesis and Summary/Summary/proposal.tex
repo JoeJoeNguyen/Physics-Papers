@@ -43,10 +43,10 @@
 % Affiliations are output in the \date{} command
 \date{Physics Department, Stevens Institute of Technology, Hoboken, NJ 07030, USA}
 
-% Full-width abstract
+% Full-width abstract (compact)
 \renewcommand{\maketitlehookd}{%
 	\begin{abstract}
-		\noindent Quantum computers promise transformative capabilities for molecular simulation and optimization problems, yet practical implementations face significant technological barriers. This research demonstrates an alternative approach: implementing quantum algorithms using classical optical systems. We present a framework for performing quantum computation through optical components, specifically realizing the Variational Quantum Eigensolver (VQE) algorithm for molecular energy calculations. Our implementation encodes qubits using photonic polarization states and spatial modes, leveraging wave plates (quarter-wave and half-wave), beamsplitters, and dove prisms to construct quantum gates. We detail the theoretical decomposition of the UCCSD (Unitary Coupled Cluster Single and Double excitations) ansatz for the hydrogen molecule, deriving the necessary rotations and entangling operations. The optical realization employs Jones calculus to systematically map quantum gates onto polarization-dependent optical transformations, with Stokes vector measurements enabling quantum state readout. This hybrid classical-optical approach provides insights into quantum circuit implementation while leveraging the well-established optical laboratory infrastructure, demonstrating that quantum algorithms can be executed through photonic platforms as an alternative to superconducting or trapped-ion systems.
+		\noindent We demonstrate an implementation of the Variational Quantum Eigensolver using classical optical systems by encoding qubits in photonic polarization and spatial modes. Using wave plates, beam splitters, and dove prisms, we map a UCCSD-inspired VQE circuit for H$_2$ to experimentally realizable optical operations via Jones-matrix decomposition and read out energies through Stokes-parameter measurements. This optical VQE provides an accessible platform for studying variational algorithms and prototyping photonic circuit implementations.
 	\end{abstract}
 }
 
