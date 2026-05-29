@@ -80,20 +80,16 @@ The optical sequence for the two-qubit UCCSD-inspired ansatz used here is:
 \item Apply a phase gate on polarization implemented as a sequence of QWPs and HWPs (Jones-phase control).
 \end{enumerate}
 
-\section{Calibration and Tomography}
 Calibration proceeds in three steps: optical axis alignment, wave-plate retardance verification, and BS splitting-ratio measurement. We reconstruct polarization states by measuring Stokes parameters $I,Q,U,V$ using HWP/QWP angle settings and a PBS; each variational circuit evaluation yields the intensities needed to compute the Hamiltonian expectation value.
 
 Tomographic reconstruction is performed assuming near-pure states and using linear inversion on the measured Stokes vector. Typical state-preparation fidelities (polarization tomography after the ansatz) are in the range 0.95--0.98 under stable alignment.
 
-\section{Results}
 We applied the optical ansatz to the two-qubit H$_2$ benchmark and measured energy estimates across the variational parameter sweep. The measured energy surface qualitatively matches the theoretical curve after applying a small calibration-phase offset. Key experimental observations:
 - Repeated measurements show shot-to-shot intensity fluctuation dominated by source and coupling drift; averaging over 50 shots reduces noise to acceptable levels for optimization.
 - The dominant systematic error is imperfect beam-splitter balance and residual birefringence in optics, which we partially compensate via calibration angles.
 
-\section{Discussion}
 The optical VQE prototype highlights practical trade-offs: components are inexpensive and reconfigurable, enabling rapid iterations, but analog imperfections (birefringence, alignment drift) constrain absolute accuracy. Scaling beyond a few qubits will require mode multiplexing, active stabilization, and integrated-photonics implementations to reduce footprint and improve stability.
 
-\section{Conclusions}
 We demonstrated a compact, experimentally focused translation of a small VQE circuit to a classical-optical platform. The setup provides a practical environment for testing ansatz design, calibration routines, and measurement strategies relevant to variational quantum algorithms.
 
 \section*{Acknowledgements}
