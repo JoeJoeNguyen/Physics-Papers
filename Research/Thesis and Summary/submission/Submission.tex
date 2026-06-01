@@ -123,6 +123,19 @@ We implement qubits using two degrees of freedom of a single photon: polarizatio
 \label{fig:optical-component-gates}
 \end{figure}
 
+
+
+Single-qubit rotations are mapped to Jones matrices realized with QWP/HWP sequences. For example, an $R_x(\pi/2)$ operation is produced with a QWP at $45^\circ$ (up to a global phase). Two-qubit interactions are emulated by coupling polarization and spatial degrees via PBS+BS networks: a polarization-controlled mode flip implements a classical-optical analogue of a CNOT between polarization and path.
+
+The optical sequence for the two-qubit UCCSD-inspired ansatz used here is:
+\begin{enumerate}
+\item Prepare reference state $\ket{10}$ by applying a polarization flip on the appropriate spatial mode.
+\item Apply parameterized single-qubit rotations on polarization and spatial-mode encodings using wave-plate angles $\{	\theta_i\}$.
+\item Entangle via PBS/BS stage that routes polarization-dependent amplitudes between spatial modes.
+\item Apply a phase gate on polarization implemented as a sequence of QWPs and HWPs (Jones-phase control).
+\end{enumerate}
+
+
 \begin{figure}[H]
 \centering
 \begin{minipage}[t]{0.48\textwidth}
@@ -154,17 +167,6 @@ We implement qubits using two degrees of freedom of a single photon: polarizatio
 \label{fig:mkz_rz}
 \end{figure}
 
-
-
-Single-qubit rotations are mapped to Jones matrices realized with QWP/HWP sequences. For example, an $R_x(\pi/2)$ operation is produced with a QWP at $45^\circ$ (up to a global phase). Two-qubit interactions are emulated by coupling polarization and spatial degrees via PBS+BS networks: a polarization-controlled mode flip implements a classical-optical analogue of a CNOT between polarization and path.
-
-The optical sequence for the two-qubit UCCSD-inspired ansatz used here is:
-\begin{enumerate}
-\item Prepare reference state $\ket{10}$ by applying a polarization flip on the appropriate spatial mode.
-\item Apply parameterized single-qubit rotations on polarization and spatial-mode encodings using wave-plate angles $\{	\theta_i\}$.
-\item Entangle via PBS/BS stage that routes polarization-dependent amplitudes between spatial modes.
-\item Apply a phase gate on polarization implemented as a sequence of QWPs and HWPs (Jones-phase control).
-\end{enumerate}
 
 
 
